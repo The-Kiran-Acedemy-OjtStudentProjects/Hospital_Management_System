@@ -6,6 +6,10 @@
 <%@ page import ="com.hospitalmanagement.constants.*"%>
 <%@ page import ="java.sql.*"%>
 <%@ page import ="java.util.*"%>
+<%@ page import ="java.util.Date"%>
+<%@ page import ="java.util.*"%>
+<%@ page import ="java.text.SimpleDateFormat"%>
+<%@ page import ="java.text.DateFormat"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,7 +20,7 @@
 <body>
 <%@ include file="./components/navbar.jsp"%>
 <div class="container-fluid">
-  <div class="row mt-4">
+  <div class="row mt-4 justify-content-center">
        <form class="form-inline ml-5" action="searchmedicinebyid">
           <div class="form-group">
             <label for="inputPassword2" class="text-color"><h4>Search Medicine By Id</h4></label>
@@ -31,13 +35,15 @@
           </div>
           <button type="submit" class="btn text-color custom-bg ml-2">Search</button>
        </form>
+  </div>
+  <div class="row justify-content-center my-2">
        <a href="totalMedicines" class="ml-2"><button class="btn text-color custom-bg ml-2">Total Medicines</button></a>
        <a href="expiredMedicines" class="ml-2"><button class="btn text-color custom-bg ml-2">Expired Medicines</button></a> 
   </div>
   <div class="table-responsive">
           <table class="table">
   <thead class="custom-bg text-color">
-    <tr>
+    <tr class="text-center">
       <th scope="col">Medicine Id</th>
       <th scope="col">Medicine Name</th> 
       <th scope="col">Medicine Type</th>    
@@ -73,7 +79,25 @@
               <td class="mid-align"><%=c.getName()%></td>
               <td class="mid-align"><%=d.getName() %></td>
               <td class="mid-align"><%=m.getManufacturedate() %></td>
-              <td class="mid-align"><%=m.getExpirydate() %></td>
+              <td class="mid-align <%
+            		  Date date = new Date();  
+                  SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd"); 
+      		        String todaysDate = formatter.format(date);
+      		        String expiry=m.getExpirydate();
+      		        int expiryYear = Integer.parseInt(expiry.substring(0, 4));
+			            int currentYear = Integer.parseInt(todaysDate.substring(0, 4));
+			            int expiryMonth = Integer.parseInt(expiry.substring(5, 7));
+			            int currentMonth = Integer.parseInt(todaysDate.substring(5, 7));
+			            int expiryDate = Integer.parseInt(expiry.substring(8, 10));
+			            int currentDate = Integer.parseInt(todaysDate.substring(8, 10));	    
+		
+			            if(expiryYear - currentYear < 1 ) {
+				            if(expiryMonth - currentMonth < 1 ) {
+					            if(expiryDate - currentDate < 1) {
+						          { %> text-danger <% }
+					            }
+				            }				
+			            }%>"><%=m.getExpirydate() %></td>
               <td class="mid-align"><a href="updateMedicine?medicineId=<%=m.getId()%>"><button type="button"
                   class="btn custom-bg text-color">Edit Medicine</button></a>
               </td>

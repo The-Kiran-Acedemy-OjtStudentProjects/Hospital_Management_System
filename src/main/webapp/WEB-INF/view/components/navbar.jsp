@@ -14,10 +14,10 @@
  
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav ml-auto">
-      <li class="nav-item active   ml-5" data-toggle="modal" data-target=".aboutusmodal">
+      <li class="nav-item active   ml-5" data-toggle="modal" data-target=".aboutusmodal" style="cursor: pointer;">
         <a class="nav-link"><b><span class="text-color">About us</span></b><span class="sr-only">(current)</span></a>
       </li>
-      <li class="nav-item active  ml-5" data-toggle="modal" data-target=".contactusmodal">
+      <li class="nav-item active  ml-5" data-toggle="modal" data-target=".contactusmodal" style="cursor: pointer;">
         <a class="nav-link text-color"><b><span class="text-color">Developers Contact</span></b></a>
       </li>
        <li class="nav-item active  ml-5">
@@ -87,10 +87,10 @@
        %>
        
     
-      <li class="nav-item active  ml-5" data-toggle="modal" data-target=".aboutusmodal">
+      <li class="nav-item active  ml-5" data-toggle="modal" data-target=".aboutusmodal" style="cursor: pointer;">
         <a class="nav-link"><b><span class="text-color">About us</span></b><span class="sr-only">(current)</span></a>
       </li>
-      <li class="nav-item active  ml-5" data-toggle="modal" data-target=".contactusmodal">
+      <li class="nav-item active  ml-5" data-toggle="modal" data-target=".contactusmodal" style="cursor: pointer;">
         <a class="nav-link text-color"><b><span class="text-color">Developers Contact</span></b></a>
       </li>
     </ul>

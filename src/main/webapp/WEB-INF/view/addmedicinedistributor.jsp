@@ -20,9 +20,9 @@
 <body>
 <%@ include file="./components/navbar.jsp"%>
 <div class="container-fluid">
-  <div class="row mt-2">
+  <div class="row mt-4">
        <div class="col-md-4 offset-md-4 admin" >
-            <div class="card">
+            <div class="card card-border">
                 <%@ include file="./components/message.jsp"%>
                 <%
 		Date date = new Date();
@@ -32,35 +32,35 @@
                 <div class="card-body px-5">
                     <h3 class="text-center my-3">Register Medicine Distributor</h3>
             <form action="addmedicinedistributor" method="post">
-            <div class="row">
+            <div class="justify-content-center">
                  <div class="form-group">
                      <label for="name">Name</label>
                      <input type="text" class="form-control" id="firstname" aria-describedby="emailHelp" name="name" placeholder="Enter name.." required>
                  </div>
                  
-                  <div class="form-group ml-4">
+                  <div class="form-group">
                      <label for="name">Email Id</label>
                      <input type="email" class="form-control" id="lastname" aria-describedby="emailHelp" name="emailid" placeholder="Enter email id.." required>
                  </div>
             </div>  
-            <div class="row">   
+            <div class="justify-content-center">   
                  <div class="form-group">
                      <label for="email">Mobile No</label>
                      <input type="text" class="form-control" id="username" aria-describedby="emailHelp" name="mobileno" placeholder="Enter mobile no.." required>
                  </div>
                  
-                 <div class="form-group ml-4">
+                 <div class="form-group">
                      <label for="name">Street</label>
                      <input type="text" class="form-control" id="street" aria-describedby="emailHelp" name="street" placeholder="Enter street.." required>
                  </div>
             </div>
-             <div class="row">
+             <div class="justify-content-center">
                  <div class="form-group">
                      <label for="name">City</label>
                      <input type="text" class="form-control" id="city" aria-describedby="emailHelp" name="city" placeholder="Enter city.." required>
                  </div>
                  
-                 <div class="form-group   ml-4">
+                 <div class="form-group">
                      <label for="email">Pin code</label>
                      <input type="number" class="form-control" id="pincode" aria-describedby="emailHelp" name="pincode" placeholder="Enter pincode.." required>
                  </div>
@@ -68,7 +68,7 @@
               
               <div class="form-group">
                      <label for="name">Register Date</label>
-                     <input type="text" class="form-control" id="street" aria-describedby="emailHelp" name="registerdate" value="<%=strDate %>" required>
+                     <input type="text" class="form-control" id="street" aria-describedby="emailHelp" name="registerdate" value="<%=strDate %>" readonly required>
                  </div>
                 <div class="container text-center">
                       <button class="btn custom-bg text-color"><b>Register Distributor</b></button>

@@ -20,20 +20,20 @@
 <body>
 <%@ include file="./components/navbar.jsp"%>
 <div class="container-fluid">
-  <div class="row mt-2">
+  <div class="row mt-4">
        <div class="col-md-4 offset-md-4 admin" >
-            <div class="card">
+            <div class="card card-border">
                 <%@ include file="./components/message.jsp"%>
                 <div class="card-body px-5">
                     <h3 class="text-center my-3">Add Medicine</h3>
             <form action="addmedicine" method="post">
-            <div class="row">
+            <div class="justify-content-center">
                  <div class="form-group">
                      <label for="name">Name</label>
                      <input type="text" class="form-control" id="firstname" aria-describedby="emailHelp" name="name" placeholder="Enter first name.." required>
                  </div>
                  
-                  <div class="form-group ml-4">
+                  <div class="form-group ">
                   <label for="email">Medicine Type</label>
                    <select name="type" class="form-control">
                        <option value="0">Select Medicine Type</option>
@@ -49,32 +49,32 @@
                    </select>
                </div>
             </div>  
-            <div class="row">   
+            <div class="justify-content-center">   
                  <div class="form-group">
                      <label for="date">Manufacture Date</label>
                      <div class="input-group date">
-                     <input type="text" class="form-control" id="username" aria-describedby="emailHelp" name="manufacturedate" placeholder="Select Date.." required>
+                     <input type="date" class="form-control" id="username" aria-describedby="emailHelp" name="manufacturedate" placeholder="Select Date.." required>
                     
                      </div>
                  </div>
                  
-                 <div class="form-group ml-4">
+                 <div class="form-group">
                      <label for="date">Expiry Date</label>
-                     <input type="text" class="form-control" id="emailid" aria-describedby="emailHelp" name="expirydate" placeholder="Enter expiry date.." required>
+                     <input type="date" class="form-control" id="emailid" aria-describedby="emailHelp" name="expirydate" placeholder="Enter expiry date.." required>
                  </div>
             </div>
-            <div class="row">     
+            <div class="justify-content-center">     
                   <div class="form-group">
                      <label for="email">Quantity</label>
                      <input type="number" class="form-control" id="mobileno" aria-describedby="emailHelp" name="quantity" placeholder="Enter quantity.." required>
                  </div>
                  
-                 <div class="form-group ml-4">
+                 <div class="form-group ">
                      <label for="email">Price</label>
-                     <input type="number" class="form-control" id="mobileno" aria-describedby="emailHelp" name="price" placeholder="Enter price.." required>
+                     <input type="number" class="form-control" id="mobileno" aria-describedby="emailHelp" name="price" placeholder="Enter price.." style="direction: none;" required>
                  </div>
              </div>   
-            <div class="row">     
+            <div class="justify-content-center">     
                   <div class="form-group">
                   <label for="email">Medicine Distributor</label>
                    <select name="distributorid" class="form-control">
@@ -92,7 +92,7 @@
                    </select>
                  </div>
                  
-                  <div class="form-group ml-4">
+                  <div class="form-group ">
                   <label for="email">Medicine Company</label>
                    <select name="companyid" class="form-control">
                        <option value="0">Select Company</option>

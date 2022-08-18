@@ -23,9 +23,9 @@
 %>
 
 <div class="container-fluid">
-  <div class="row mt-2">
+  <div class="row mt-4">
        <div class="col-md-4 offset-md-4 admin" >
-            <div class="card">
+            <div class="card card-border">
                 <%@ include file="./components/message.jsp"%>
                 <div class="card-body px-5">
                     <h3 class="text-center my-3">Update Medicine</h3>
@@ -36,16 +36,16 @@
                   <input type="text" class="form-control" id="id" aria-describedby="emailHelp" name="id" value="<%=medicine.getId()%>" readonly required>
              </div>
             
-            <div class="row">
+            <div class="justify-content-center">
                  <div class="form-group">
                      <label for="name">Name</label>
                      <input type="text" class="form-control" id="firstname" aria-describedby="emailHelp" name="name" value="<%= medicine.getName()%>" required>
                  </div>
                  
-                  <div class="form-group ml-4">
+                  <div class="form-group">
                   <label for="email">Medicine Type</label>
                    <select name="type" class="form-control">
-                       <option value="0">Select Medicine Type</option>
+                       <option value="<%= medicine.getType()%>" selected><%= medicine.getType()%></option>
                        <%
                            
                            for(DatabaseConstants.MedicineType medicineType : DatabaseConstants.MedicineType.values())
@@ -58,38 +58,43 @@
                    </select>
                </div>
             </div>  
-            <div class="row">   
+            <div class="justify-content-center">   
                  <div class="form-group">
                      <label for="date">Manufacture Date</label>
                      <div class="input-group date">
-                     <input type="text" class="form-control" id="username" aria-describedby="emailHelp" name="manufacturedate" value="<%= medicine.getManufacturedate()%>" required>
+                     <input type="date" class="form-control" id="username" aria-describedby="emailHelp" name="manufacturedate" value="<%= medicine.getManufacturedate()%>" required>
                     
                      </div>
                  </div>
                  
-                 <div class="form-group ml-4">
+                 <div class="form-group">
                      <label for="date">Expiry Date</label>
-                     <input type="text" class="form-control" id="emailid" aria-describedby="emailHelp" name="expirydate" value="<%= medicine.getExpirydate()%>" required>
+                     <input type="date" class="form-control" id="emailid" aria-describedby="emailHelp" name="expirydate" value="<%= medicine.getExpirydate()%>" required>
                  </div>
             </div>
-            <div class="row">     
+            <div class="justify-content-center">     
                   <div class="form-group">
                      <label for="email">Quantity</label>
                      <input type="number" class="form-control" id="mobileno" aria-describedby="emailHelp" name="quantity" value="<%= medicine.getQuantity()%>" required>
                  </div>
                  
-                 <div class="form-group ml-4">
+                 <div class="form-group">
                      <label for="email">Price</label>
                      <input type="number" class="form-control" id="mobileno" aria-describedby="emailHelp" name="price" value="<%= medicine.getPrice()%>" required>
                  </div>
              </div>   
-            <div class="row">     
+            <div class="justify-content-center">     
                   <div class="form-group">
                   <label for="email">Medicine Distributor</label>
                    <select name="distributorid" class="form-control">
-                       <option value="0">Select Distributor</option>
+                    <%
+                    MedicineDistributorResource medicineDistributorResource = (MedicineDistributorResource) request.getAttribute("medicineDistributorResource");
+                    MedicineDistributor distribut = medicineDistributorResource.getDistributorById(medicine.getDistributorid());
+                    
+                     %>
+
+                       <option value="<%=distribut.getName()%>" selected><%=distribut.getName()%></option>
                        <%
-                           MedicineDistributorResource medicineDistributorResource = (MedicineDistributorResource) request.getAttribute("medicineDistributorResource");
                            List<MedicineDistributor> medicineDistributors = medicineDistributorResource.getAllDistributors();
                            for(MedicineDistributor medicineDistributor : medicineDistributors)
                            {
@@ -101,12 +106,15 @@
                    </select>
                  </div>
                  
-                  <div class="form-group ml-4">
+                  <div class="form-group">
                   <label for="email">Medicine Company</label>
                    <select name="companyid" class="form-control">
-                       <option value="0">Select Company</option>
+                    <%
+                    MedicineCompanyResource medicineCompanyResource = (MedicineCompanyResource) request.getAttribute("medicineCompanyResource");
+                    MedicineCompany medicineComp = medicineCompanyResource.getCompanyById(medicine.getCompanyid());
+                    %>
+                       <option value="<%=medicineComp.getName() %>"><%=medicineComp.getName() %></option>
                        <%
-                           MedicineCompanyResource medicineCompanyResource = (MedicineCompanyResource) request.getAttribute("medicineCompanyResource");
                            List<MedicineCompany> medicineCompanys = medicineCompanyResource.getAllCompanys();
                            for(MedicineCompany medicineCompany : medicineCompanys)
                            {
