@@ -83,11 +83,17 @@ public class MedicineController {
 	}
 	
 	@GetMapping("/searchmedicinebyid")
-	public ModelAndView searchMedicineById(@RequestParam int medicineId) {
+	public ModelAndView searchMedicineById(@RequestParam String medicineId) {
 		LOG.info("Searching medicine by id");
-		Medicine medicine = medicineResource.getMedicineById(medicineId);
+		int id=0;
+		if(!medicineId.equals("")){
+			id = Integer.parseInt(medicineId);
+		}
+		Medicine medicine = medicineResource.getMedicineById(id);
 		List<Medicine> medicines = new ArrayList<Medicine>();
-		medicines.add(medicine);
+		if(medicine!=null){
+			medicines.add(medicine);
+		}
 		ModelAndView mv =new ModelAndView();
 		mv.setViewName("searchmedicine");
 		mv.addObject("medicines", medicines);

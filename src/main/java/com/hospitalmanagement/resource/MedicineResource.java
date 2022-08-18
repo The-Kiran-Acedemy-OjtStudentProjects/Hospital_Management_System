@@ -58,19 +58,19 @@ public class MedicineResource {
 	public List<Medicine> getExpiredMedicines(){
 		
 		Date date = new Date();  
-        SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy"); 
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd"); 
 		String todaysDate = formatter.format(date);
         
 		List<Medicine> expiredMedicines = new ArrayList<>();
 		
 		for(Medicine medicine :  medicineService.getAllMedicine()) {
 			String expiry = medicine.getExpirydate();
-			int expiryYear = Integer.parseInt(expiry.substring(6, 10));
-			int currentYear = Integer.parseInt(todaysDate.substring(6, 10));
-			int expiryMonth = Integer.parseInt(expiry.substring(3, 5));
-			int currentMonth = Integer.parseInt(todaysDate.substring(3, 5));
-			int expiryDate = Integer.parseInt(expiry.substring(0, 2));
-			int currentDate = Integer.parseInt(todaysDate.substring(0, 2));	    
+			int expiryYear = Integer.parseInt(expiry.substring(0, 4));
+			int currentYear = Integer.parseInt(todaysDate.substring(0, 4));
+			int expiryMonth = Integer.parseInt(expiry.substring(5, 7));
+			int currentMonth = Integer.parseInt(todaysDate.substring(5, 7));
+			int expiryDate = Integer.parseInt(expiry.substring(8, 10));
+			int currentDate = Integer.parseInt(todaysDate.substring(8, 10));	    
 		
 			if(expiryYear - currentYear < 1 ) {
 				if(expiryMonth - currentMonth < 1 ) {
