@@ -565,11 +565,11 @@
 								<div class="form-group">
 									<input type="text" class="form-control ml-3"
 										id="inputPassword2" name="patientname"
-										placeholder="Enter Patient name..">
+										placeholder="Enter Patient name.." required>
 								</div>
 								<button type="submit" class="btn text-color custom-bg ml-2">Search</button>
 							</form>
-							<form class="form-inline mt-1" action="searchappointmentbyDate">
+							<form class="form-inline mt-1" action="searchappointmentbyDate" required>
 								<div class="form-group">
 									<input type="text" class="form-control ml-3"
 										id="inputPassword2" name="appointmentdate"
@@ -719,11 +719,11 @@
 								</div>
 								<button type="submit" class="btn text-color custom-bg ml-2">Search</button>
 							</form>
-							<form class="form-inline mt-1" action="searchmedicinebyName">
+							<form class="form-inline mt-1" action="searchmedicinebyName" >
 								<div class="form-group">
 									<input type="text" class="form-control ml-3"
 										id="inputPassword2" name="medicineName"
-										placeholder="Enter Medicine name..">
+										placeholder="Enter Medicine name.." required>
 								</div>
 								<button type="submit" class="btn text-color custom-bg ml-2">Search</button>
 							</form>
@@ -839,7 +839,7 @@
 								<div class="form-group">
 									<input type="text" class="form-control ml-3"
 										id="inputPassword2" name="doctorName"
-										placeholder="Enter Doctor name..">
+										placeholder="Enter Doctor name.." required>
 								</div>
 								<button type="submit" class="btn text-color custom-bg ml-2">Search</button>
 							</form>
@@ -938,7 +938,7 @@
 								<div class="form-group">
 									<input type="text" class="form-control ml-3"
 										id="inputPassword2" name="receptionistName"
-										placeholder="Enter receptionist name..">
+										placeholder="Enter receptionist name.." required>
 								</div>
 								<button type="submit" class="btn text-color custom-bg ml-2">Search</button>
 							</form>
@@ -1035,7 +1035,7 @@
 								<div class="form-group">
 									<input type="text" class="form-control ml-3"
 										id="inputPassword2" name="pharmacistName"
-										placeholder="Enter pharmacist name..">
+										placeholder="Enter pharmacist name.." required>
 								</div>
 								<button type="submit" class="btn text-color custom-bg ml-2">Search</button>
 							</form>
@@ -1134,7 +1134,7 @@
 								<div class="form-group">
 									<input type="text" class="form-control ml-3"
 										id="inputPassword2" name="patientName"
-										placeholder="Enter patient name..">
+										placeholder="Enter patient name.." required>
 								</div>
 								<button type="submit" class="btn text-color custom-bg ml-2">Search</button>
 							</form>
