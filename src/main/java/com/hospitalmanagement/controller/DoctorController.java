@@ -98,7 +98,7 @@ public class DoctorController {
 		ModelAndView mv = new ModelAndView();
 		if(this.doctorService.addDoctor(doctor)==true) {
 			mv.addObject("status", doctor.getFirstname()+" Successfully Registered as DOCTOR");
-			mv.setViewName("doctorlogin");
+			mv.setViewName("doctorregister");
 		}
 		
 		else {

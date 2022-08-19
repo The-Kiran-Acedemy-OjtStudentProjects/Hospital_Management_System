@@ -32,6 +32,7 @@ public class AppointmentServiceImp implements AppointmentService {
 
 	@Override
 	public List<Appointment> getAppointmentsByPatientsId(List<Integer> patientsId) {
+		System.out.println("In AppointmentService class "+appointmentDao.findByPatientsId(patientsId));
 		return appointmentDao.findByPatientsId(patientsId);
 	}
 
@@ -63,7 +64,13 @@ public class AppointmentServiceImp implements AppointmentService {
 
 	@Override
 	public double getSumOfPriceUsingBillingDate(String billingDate) {
-		return appointmentDao.sumOfPrice(billingDate);
+		System.out.println(appointmentDao.sumOfPrice(billingDate));
+		if(appointmentDao.sumOfPrice(billingDate)==null) {
+			return 0;
+		} else {
+			return appointmentDao.sumOfPrice(billingDate);
+		}
+		
 	}
 
 	@Override

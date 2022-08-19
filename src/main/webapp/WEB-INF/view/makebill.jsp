@@ -116,9 +116,9 @@
                  
                  <div class="form-check">
                      <label class="form-check-label" for="exampleCheck1">Want Medicines from hospital</label><br>
-                     <input type="checkbox" class="form-check-input" id="exampleCheck1" name="iswantmedicine" value="<%=DatabaseConstants.WantMedicinesFromHospital.YES.value()%>">
+                     <input type="radio" class="form-check-input" id="exampleCheck1" name="iswantmedicine" value="<%=DatabaseConstants.WantMedicinesFromHospital.YES.value()%>">
                      <label>Yes</label><br>
-                     <input type="checkbox" class="form-check-input" id="exampleCheck1" name="iswantmedicine" value="<%=DatabaseConstants.WantMedicinesFromHospital.NO.value()%>">
+                     <input type="radio" class="form-check-input" id="exampleCheck1" name="iswantmedicine" value="<%=DatabaseConstants.WantMedicinesFromHospital.NO.value()%>">
                      <label>No</label>
                  </div>
                  

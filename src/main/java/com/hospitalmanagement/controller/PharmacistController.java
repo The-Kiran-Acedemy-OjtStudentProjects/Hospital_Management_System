@@ -78,7 +78,7 @@ public class PharmacistController {
 		ModelAndView mv = new ModelAndView();
 		if (this.pharmacistService.addPharmacist(pharmacist)!=null) {
 			mv.addObject("status", pharmacist.getFirstname() + " Successfully Registered as PHARMACIST");
-			mv.setViewName("pharmacistlogin");
+			mv.setViewName("pharmacistregister");
 		}
 
 		else {

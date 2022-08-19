@@ -1,3 +1,4 @@
+<%@page import="org.hibernate.internal.build.AllowSysOut"%>
 <%@page import="com.hospitalmanagement.constants.DatabaseConstants.TreatmentStatus"%>
 <%@page import="com.hospitalmanagement.constants.DatabaseConstants.BillMade"%>
 <%@page import="com.hospitalmanagement.constants.DatabaseConstants.WantMedicinesFromHospital"%>
@@ -27,27 +28,27 @@
        <form class="form-inline ml-5" action="searchappointmentbyid">
           <div class="form-group">
             <label for="inputPassword2" class="text-color"><h4>Search Appointment By Id</h4></label>
-            <input type="number" class="form-control ml-3" id="inputPassword2" name="appointmentid" placeholder="Enter Appointment Id..">
+            <input type="number" class="form-control ml-3" id="inputPassword2" name="appointmentid" placeholder="Enter Appointment Id.." required>
           </div>
           <button type="submit" class="btn text-color custom-bg ml-2">Search</button>
        </form>
        <form class="form-inline mt-1" action="searchappointmentbypatientname">
           <div class="form-group">
             <label for="inputPassword2" class="text-color ml-5"><h4>Search Appointment By Patient name</h4></label>
-            <input type="text" class="form-control ml-3" id="inputPassword2" name="patientname" placeholder="Enter Patient name..">
+            <input type="text" class="form-control ml-3" id="inputPassword2" name="patientname" placeholder="Enter Patient name.." required>
           </div>
           <button type="submit" class="btn text-color custom-bg ml-2">Search</button>
        </form>
         <form class="form-inline mt-1" action="searchappointmentbydate">
           <div class="form-group">
             <label for="inputPassword2" class="text-color ml-5"><h4>Search Appointment By Date</h4></label>
-            <input type="text" class="form-control ml-3" id="inputPassword2" name="appointmentdate" placeholder="Enter Date..">
+            <input type="text" class="form-control ml-3" id="inputPassword2" name="appointmentdate" placeholder="Enter Date.." required>
           </div>
           <button type="submit" class="btn text-color custom-bg ml-2">Search</button>
        </form>
        <%
            Date date = new Date();  
-           SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");  
+           SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yy");  
            String strDate= formatter.format(date);  
        %>
        <a href="searchappointmentbydate?appointmentdate=<%=strDate%>" class="ml-2"><button class="btn text-color custom-bg ml-2">Get Todays Appointments</button></a>
@@ -75,7 +76,8 @@
       List<Appointment> listOfAppointments = (List<Appointment>)request.getAttribute("appointments");
       PatientResource patientResource = (PatientResource)request.getAttribute("patientResource");
       DoctorResource doctorResource = (DoctorResource)request.getAttribute("doctorResource");
- 
+      
+      System.out.println("In Search Appointment By Id " + listOfAppointments);
       if(listOfAppointments != null ) {
           for(Appointment a : listOfAppointments) {
         	  Patient patient = patientResource.getPatientById(a.getPatientid());
