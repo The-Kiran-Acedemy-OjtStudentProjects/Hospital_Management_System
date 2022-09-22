@@ -87,6 +87,25 @@ public class DoctorController {
 		return mv;
 	}
 	
+	@GetMapping("/getAllDoctors")
+	public ModelAndView getAllDoctors() {
+		LOG.info("fetching All Doctors list");
+		List<Doctor> doctors = doctorResource.getAllDoctor();
+		ModelAndView mv =new ModelAndView();
+        mv.addObject("view", AdminView.DOCTOR.value());
+		mv.setViewName("admindashboard");
+		mv.addObject("doctors", doctors);
+		mv.addObject("appointmentResource", appointmentResource);
+		mv.addObject("medicineResource", medicineResource);
+		mv.addObject("companyResource", medicineCompanyResource);
+		mv.addObject("distributorResource", medicineDistributorResource);
+        mv.addObject("patientResource",patientResource );
+        mv.addObject("doctorResource", doctorResource);
+        mv.addObject("receptionistResource",receptionistResource);
+        mv.addObject("pharmacistResource",pharmacistResource);
+		return mv;
+	}
+	
 	@GetMapping("/doctorregister")
 	public ModelAndView goToDoctorRegisterPage() {
 		LOG.info("Redirecting to Doctor Register Page.");
