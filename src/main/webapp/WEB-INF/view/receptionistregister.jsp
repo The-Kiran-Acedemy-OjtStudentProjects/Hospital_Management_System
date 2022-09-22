@@ -29,18 +29,18 @@
                     <h3 class="text-center my-3">Register Receptionist</h3>
             <form action="receptionistregister" method="post">
             <div class="row">
-                 <div class="form-group">
+                 <div class="form-group ml-4">
                      <label for="name">First Name</label>
                      <input type="text" class="form-control" id="firstname" aria-describedby="emailHelp" name="firstname" placeholder="Enter first name.." required>
                  </div>
-                 
+
                   <div class="form-group ml-4">
                      <label for="name">Last Name</label>
                      <input type="text" class="form-control" id="lastname" aria-describedby="emailHelp" name="lastname" placeholder="Enter last name.." required>
                  </div>
-            </div>  
-            <div class="row">   
-                 <div class="form-group">
+            </div>
+            <div class="row">
+                 <div class="form-group ml-4">
                      <label for="email">Email</label>
                      <input type="email" class="form-control" id="emailid" aria-describedby="emailHelp" name="emailid" placeholder="Enter email id.." required>
                  </div>
@@ -49,45 +49,45 @@
                      <input type="text" class="form-control" id="emailid" aria-describedby="emailHelp" name="username" placeholder="Enter username.." required>
                  </div>
             </div>
-            <div class="row">     
-                  <div class="form-group">
+            <div class="row">
+                  <div class="form-group ml-4">
                      <label for="email">Age</label>
                      <input type="number" class="form-control" id="mobileno" aria-describedby="emailHelp" name="age" placeholder="Enter age.." required>
                   </div>
                   <div class="form-group ml-4">
                      <label for="email">Street</label>
                      <input type="text" class="form-control" id="street" aria-describedby="emailHelp" name="street" placeholder="Enter Street.." required>
-                  </div>   
-             </div>   
+                  </div>
+             </div>
              <div class="row">
-                 <div class="form-group">
+                 <div class="form-group ml-4" >
                      <label for="name">City</label>
                      <input type="text" class="form-control" id="city" aria-describedby="emailHelp" name="city" placeholder="Enter city.." required>
                  </div>
-                 
+
                  <div class="form-group   ml-4">
                      <label for="email">Pin code</label>
                      <input type="number" class="form-control" id="pincode" aria-describedby="emailHelp" name="pincode" placeholder="Enter pincode.." required>
                  </div>
               </div>
-              <div class="row">     
-                  <div class="form-group">
+              <div class="row">
+                  <div class="form-group ml-4" >
                      <label for="email">Mobile No.</label>
                      <input type="number" class="form-control" id="password" aria-describedby="emailHelp" name="mobileno" placeholder="Enter mobile no.." required>
                  </div>
-                 
+
                   <div class="form-group ml-4">
                      <label for="name">Password</label>
                      <input type="password" class="form-control" id="password" aria-describedby="emailHelp" name="password" placeholder="Enter password.." required>
                  </div>
-             </div>    
+             </div>
              <%
-                   Date date = new Date();  
-                   SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");  
-                   String strDate= formatter.format(date);  
+                   Date date = new Date();
+                   SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
+                   String strDate= formatter.format(date);
                  %>
-               <div class="row">   
-                 <div class="form-group">
+               <div class="row">
+                 <div class="form-group ml-4">
                      <label for="rdate">Registered Date</label>
                      <input type="text" class="form-control" id="rdate" aria-describedby="emailHelp" name="registerdate" value="<%=strDate%>" readonly required>
                  </div>

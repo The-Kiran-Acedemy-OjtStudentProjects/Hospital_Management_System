@@ -113,12 +113,17 @@
                      <label for="email">Total Medicines Price</label>
                      <input type="text" class="form-control" aria-describedby="emailHelp" value="<%=mResource.getMedicinesPrice(mds) %>" required readonly>
                  </div>
-                 
+                 <div class="row">
+                  <div class="form-group">
+                     <label for="email">Bill Date</label>
+                     <input type="date" class="form-control" aria-describedby="emailHelp" value="<%=appointment.getBillingDate() %>" required >
+                 </div>
+              <br><br>
                  <div class="form-check">
                      <label class="form-check-label" for="exampleCheck1">Want Medicines from hospital</label><br>
-                     <input type="checkbox" class="form-check-input" id="exampleCheck1" name="iswantmedicine" value="<%=DatabaseConstants.WantMedicinesFromHospital.YES.value()%>">
+                     <input type="radio" class="form-check-input" id="exampleCheck1" name="iswantmedicine" value="<%=DatabaseConstants.WantMedicinesFromHospital.YES.value()%>">
                      <label>Yes</label><br>
-                     <input type="checkbox" class="form-check-input" id="exampleCheck1" name="iswantmedicine" value="<%=DatabaseConstants.WantMedicinesFromHospital.NO.value()%>">
+                     <input type="radio" class="form-check-input" id="exampleCheck1" name="iswantmedicine" value="<%=DatabaseConstants.WantMedicinesFromHospital.NO.value()%>">
                      <label>No</label>
                  </div>
                  

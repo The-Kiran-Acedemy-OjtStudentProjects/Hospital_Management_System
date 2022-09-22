@@ -21,14 +21,14 @@
 <%@ include file="./components/navbar.jsp"%>
 <%
     Date date = new Date();  
-    SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");  
-    String strDate= formatter.format(date);  
+    SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+    String strDate= formatter.format(date);
 %>
 <div class="row mt-4">
     <div class="col-md-6">
         <div class="card">
             <div class="card-header text-center text-color">
-                <h3>Todays Appointment  Date : <%=strDate%> </h3> 
+                <h3>Todays Appointment  Date : <%=strDate%> </h3>
             </div>
             <div class="card-body">
                <div class="table-responsive">
@@ -36,28 +36,28 @@
   <thead class="custom-bg text-color">
     <tr>
       <th scope="col">Appointment No.</th>
-      <th scope="col">Patient Name</th> 
+      <th scope="col">Patient Name</th>
       <th scope="col">Appointment Date</th>
       <th scope="col">Appointment Time</th>
       <th scope="col">Treatment Status</th>
-      <th scope="col">Take Action</th> 
+      <th scope="col">Take Action</th>
     </tr>
   </thead>
-  
+
    <%
       Doctor doctor = (Doctor)session.getAttribute("active-user");
-      AppointmentResource appointmentResource = (AppointmentResource) request.getAttribute("appointmentResource"); 
+      AppointmentResource appointmentResource = (AppointmentResource) request.getAttribute("appointmentResource");
       List<Appointment> appointments = appointmentResource.getAppointmentsByDoctorIdAndAppointmentDate(doctor.getId(),strDate );
       DoctorResource dResource = (DoctorResource)request.getAttribute("doctorResource");
       PatientResource pResource = (PatientResource)request.getAttribute("patientResource");
- 
+
       if(appointments != null) {
-    	  
+
     	  for(Appointment appointment : appointments) {
           Doctor d = dResource.getDoctorById(appointment.getDoctorid());
           Patient p = pResource.getPatientById(appointment.getPatientid());
-        
-    %> 
+
+    %>
   <tbody>
     <tr class="text-center">
       <td class="mid-align"><%=appointment.getId()%></td>
@@ -83,13 +83,13 @@
     <div class="col-md-6">
         <div class="card">
             <div class="card-header text-center text-color">
-                <h3>Search Appointments</h3> 
+                <h3>Search Appointments</h3>
             </div>
             <div class="card-body">
                <form class="form-inline ml-5" action="searchappointmentbydateandtime">
                  <div class="form-group">
                   <label for="inputPassword2" class="text-color"><h5>Search Appointments</h5></label>
-                  <input type="text" class="form-control mr-1 ml-2" id="inputPassword2" name="date" placeholder="Enter Date..">
+                  <input type="date" class="form-control mr-1 ml-2" id="inputPassword2" name="date" placeholder="Enter Date..">
                   <select name="time" class="form-control ml-2">
                        <option value="0">Select Timing</option>
                       <%
