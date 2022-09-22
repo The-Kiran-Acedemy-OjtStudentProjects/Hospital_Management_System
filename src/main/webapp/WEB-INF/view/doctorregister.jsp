@@ -26,39 +26,39 @@
                     <h3 class="text-center my-3">Register Doctor</h3>
             <form action="doctorregister" method="post">
             <div class="row">
-                 <div class="form-group">
+                 <div class="form-group ml-5">
                      <label for="name">First Name</label>
                      <input type="text" class="form-control" id="firstname" aria-describedby="emailHelp" name="firstname" placeholder="Enter first name.." required>
                  </div>
-                 
-                  <div class="form-group ml-4">
+
+                  <div class="form-group ml-5">
                      <label for="name">Last Name</label>
                      <input type="text" class="form-control" id="lastname" aria-describedby="emailHelp" name="lastname" placeholder="Enter last name.." required>
                  </div>
-            </div>  
-            <div class="row">   
-                 <div class="form-group">
+            </div>
+            <div class="row">
+                 <div class="form-group ml-5">
                      <label for="email">User name</label>
                      <input type="text" class="form-control" id="username" aria-describedby="emailHelp" name="username" placeholder="Enter username.." required>
                  </div>
-                 
-                 <div class="form-group ml-4">
+
+                 <div class="form-group ml-5">
                      <label for="email">Email</label>
                      <input type="email" class="form-control" id="emailid" aria-describedby="emailHelp" name="emailid" placeholder="Enter email id.." required>
                  </div>
             </div>
-            <div class="row">     
-                  <div class="form-group">
+            <div class="row">
+                  <div class="form-group ml-5">
                      <label for="email">Age</label>
                      <input type="number" class="form-control" id="mobileno" aria-describedby="emailHelp" name="age" placeholder="Enter age.." required>
                  </div>
-                 
-                  <div class="form-group ml-4">
+
+                  <div class="form-group ml-5">
                   <label for="email">Specialist</label>
                    <select name="specialist" class="form-control">
                        <option value="0">Select Specialist</option>
                       <%
-                           
+
                            for(DatabaseConstants.DoctorSpecialist specialistType : DatabaseConstants.DoctorSpecialist.values())
                            {
                        %>
@@ -68,50 +68,50 @@
                        %>
                    </select>
                </div>
-             </div>   
-            <div class="row">     
-                  <div class="form-group">
+             </div>
+            <div class="row">
+                  <div class="form-group ml-5">
                      <label for="email">Mobile</label>
                      <input type="number" class="form-control" id="mobileno" aria-describedby="emailHelp" name="mobileno" placeholder="Enter mobile no.." required>
                  </div>
-                 
-                  <div class="form-group ml-4">
+
+                  <div class="form-group ml-5">
                      <label for="name">Street</label>
-                     <input type="text" class="form-control" id="street" aria-describedby="emailHelp" name="street" placeholder="Enter email id.." required>
+                     <input type="text" class="form-control" id="street" aria-describedby="emailHelp" name="street" placeholder="Enter street name.." required>
                  </div>
-             </div>    
+             </div>
              <div class="row">
-                 <div class="form-group">
+                 <div class="form-group ml-5">
                      <label for="name">City</label>
                      <input type="text" class="form-control" id="city" aria-describedby="emailHelp" name="city" placeholder="Enter city.." required>
                  </div>
-                 
-                 <div class="form-group   ml-4">
+
+                 <div class="form-group   ml-5">
                      <label for="email">Pin code</label>
                      <input type="number" class="form-control" id="pincode" aria-describedby="emailHelp" name="pincode" placeholder="Enter pincode.." required>
                  </div>
               </div>
-              <div class="row">   
-                 <div class="form-group">
+              <div class="row">
+                 <div class="form-group ml-5">
                      <label for="password">Password</label>
                      <input type="password" class="form-control" id="password" aria-describedby="emailHelp" name="password" placeholder="Enter password.." required>
                      <small id="passwordHelpInline" class="text-muted">
                         Must be 8-20 characters long.
                      </small>
                  </div>
-                 
-                 <div class="form-group  ml-4">
+
+                 <div class="form-group  ml-5">
                      <label for="password">Confirm Password</label>
                      <input type="password" class="form-control" id="confirmpassword" aria-describedby="emailHelp" placeholder="repeat password.." required>
                  </div>
                </div>
                <%
-                   Date date = new Date();  
-                   SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");  
-                   String strDate= formatter.format(date);  
+                   Date date = new Date();
+                   SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
+                   String strDate= formatter.format(date);
                  %>
-               <div class="row">   
-                 <div class="form-group">
+               <div class="row">
+                 <div class="form-group ml-5">
                      <label for="rdate">Registered Date</label>
                      <input type="text" class="form-control" id="rdate" aria-describedby="emailHelp" name="registerdate" value="<%=strDate%>" readonly required>
                  </div>

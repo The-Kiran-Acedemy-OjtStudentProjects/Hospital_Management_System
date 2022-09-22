@@ -22,7 +22,7 @@
                      <label for="email">User name</label>
                      <input type="text" class="form-control" id="username" aria-describedby="emailHelp" name="username" placeholder="Enter email id.." required>
                  </div>
-              
+
                  <div class="form-group">
                      <label for="password">Password</label>
                      <input type="password" class="form-control" id="password" aria-describedby="emailHelp" name="password" placeholder="Enter password.." required>
@@ -30,16 +30,16 @@
                         Must be 8-20 characters long.
                      </small>
                  </div>
-        
+
                 <div class="container text-center">
                       <button class="btn custom-bg text-color"><b>Login</b></button>
                 </div>
-                 
+
             </form>
                 </div>
             </div>
-           
-            
+
+
        </div>
   </div>
 </div>

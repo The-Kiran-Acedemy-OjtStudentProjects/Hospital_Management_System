@@ -35,7 +35,7 @@
 	String view = (String) request.getAttribute("view");
 
 	Date date = new Date();
-	SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
+	SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
 	String todayDate = formatter.format(date);
 	%>
 
@@ -154,8 +154,7 @@
 									height="40px" width="40px"> <b>Total Earnings Today</b>
 							</div>
 							<div class="card-body text-color text-center">
-								<h3>
-									&#8377;<%=appointmentResource.getTotalEarningToday()%></h3>
+								<h3><%=appointmentResource.getTotalEarningToday()%></h3>
 							</div>
 						</div>
 					</div>
@@ -563,15 +562,15 @@
 							</form>
 							<form class="form-inline mt-1" action="searchappointmentbyDate">
 								<div class="form-group">
-									<input type="text" class="form-control ml-3"
+									<input type="date" class="form-control ml-3"
 										id="inputPassword2" name="appointmentdate"
 										placeholder="Enter Date..">
 								</div>
 								<button type="submit" class="btn text-color custom-bg ml-2">Search</button>
 							</form>
 							<%
-						Date dat = new Date();  
-		                   SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy");  
+						Date dat = new Date();
+		                   SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
 						String strDat = format.format(dat);
 						%>
 							<a href="searchappointmentbyDate?appointmentdate=<%=strDat%>"
