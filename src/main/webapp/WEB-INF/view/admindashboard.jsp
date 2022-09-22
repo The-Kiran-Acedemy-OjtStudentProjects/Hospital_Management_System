@@ -924,6 +924,10 @@
 								</div>
 								<button type="submit" class="btn text-color custom-bg ml-2">Search</button>
 							</form>
+							<form class="form-inline mt-1" action="receptionistList">
+								
+								<button type="submit" class="btn text-color custom-bg ml-2" id="inputPassword2" name="receptionistName">Total Receptionist List</button>
+							</form>
 						</div>
 					</div>
 

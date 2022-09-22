@@ -144,5 +144,23 @@ public class ReceptionistController {
         mv.addObject("pharmacistResource",pharmacistResource);
 		return mv;
 	}
+	@GetMapping("/receptionistList")
+	public ModelAndView receptionistList(@RequestParam String receptionistName) {
+		LOG.info("Searching Medicine by medicine name");
+		List<Receptionist> receptionists = receptionistResource.getReceptionistsByFirstname(receptionistName);
+		ModelAndView mv =new ModelAndView();
+        mv.addObject("view", AdminView.RECEPTIONIST.value());
+		mv.setViewName("admindashboard");
+		mv.addObject("receptionists", receptionists);
+		mv.addObject("appointmentResource", appointmentResource);
+		mv.addObject("medicineResource", medicineResource);
+		mv.addObject("companyResource", medicineCompanyResource);
+		mv.addObject("distributorResource", medicineDistributorResource);
+        mv.addObject("patientResource",patientResource );
+        mv.addObject("doctorResource", doctorResource);
+        mv.addObject("receptionistResource",receptionistResource);
+        mv.addObject("pharmacistResource",pharmacistResource);
+		return mv;
+	}
 
 }
