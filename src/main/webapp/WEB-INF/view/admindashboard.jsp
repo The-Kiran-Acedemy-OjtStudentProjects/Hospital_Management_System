@@ -795,7 +795,9 @@
 							<div class="card-header text-color text-center">
 								<img src="resources/images/logo.png"
 									class="rounded mx-auto pt-2 d-inline-block" alt="img"
-									height="40px" width="40px"> <b>Total Doctors</b>
+									height="40px" width="40px">
+									<a href="getAllDoctors"><button type="button" class="btn text-color custom-bg ml-2">Total doctors</button></a> 
+<!-- 									<b>Total Doctors</b> -->
 							</div>
 							<div class="card-body text-color text-center">
 								<h3><%=doctorResource.getDoctorsTotalCount()%></h3>
