@@ -1088,7 +1088,8 @@
 							<div class="card-header text-color text-center">
 								<img src="resources/images/logo.png"
 									class="rounded mx-auto pt-2 d-inline-block" alt="img"
-									height="40px" width="40px"> <b>Total Patients</b>
+									height="40px" width="40px">
+									<a href="searchAllpatient">searchAllpatient</a>
 							</div>
 							<div class="card-body text-color text-center">
 								<h3><%=patientResource.getPatientsTotalCount()%></h3>

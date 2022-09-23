@@ -65,4 +65,9 @@ public class PatientServiceImp implements PatientService {
 		return patientDao.findTop5ByIdDesc(date);
 	}
 
+	@Override
+	public List<Patient>  getAllPatient() {
+
+		return patientDao.getAllPatient();
+	}
 }

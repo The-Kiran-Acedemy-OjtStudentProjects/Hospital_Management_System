@@ -40,9 +40,7 @@ public class PatientResource {
 		return patientService.updatePatient(patient);
 	}
 	
-	public List<Patient> getAllPatient(){
-		return patientService.getAllPatients();
-	}
+
 	
 	public List<Patient> getPatientsByName(String patientName) {
 		return patientService.getPatientsIdByPatientName(patientName);
@@ -60,4 +58,7 @@ public class PatientResource {
 		return patientService.getTop5PatientAddedByDate(date);
 	}
 
+	public List<Patient> getAllPatient() {
+		return patientService.getAllPatient();
+	}
 }
