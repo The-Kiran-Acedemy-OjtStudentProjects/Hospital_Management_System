@@ -56,7 +56,6 @@
     	  for(Appointment appointment : appointments) {
           Doctor d = dResource.getDoctorById(appointment.getDoctorid());
           Patient p = pResource.getPatientById(appointment.getPatientid());
-       
         
     %> 
   <tbody>
@@ -116,7 +115,6 @@
       <th scope="col">Appointment Time</th>
       <th scope="col">Treatment Status</th>
       <th scope="col">Take Action</th> 
-   
     </tr>
   </thead>
   
@@ -128,7 +126,7 @@
     	  for(Appointment appointment : apmts) {
           Doctor d = dResource.getDoctorById(appointment.getDoctorid());
           Patient p = pResource.getPatientById(appointment.getPatientid());
-      
+        
     %> 
   <tbody>
     <tr class="text-center">

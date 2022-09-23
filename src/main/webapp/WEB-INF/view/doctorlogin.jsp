@@ -20,7 +20,7 @@
             <form action="doctorlogin" method="post">
                  <div class="form-group">
                      <label for="email">User name</label>
-                     <input type="text" class="form-control" id="username" aria-describedby="emailHelp" name="username" placeholder="Enter Username.." required>
+                     <input type="text" class="form-control" id="username" aria-describedby="emailHelp" name="username" placeholder="Enter email id.." required>
                  </div>
               
                  <div class="form-group">

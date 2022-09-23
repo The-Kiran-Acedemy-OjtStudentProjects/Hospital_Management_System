@@ -10,7 +10,7 @@ import com.hospitalmanagement.dao.PatientDao;
 import com.hospitalmanagement.model.Patient;
 
 @Service("patientService")
-public class PatientServiceImpl implements PatientService {
+public class PatientServiceImp implements PatientService {
 	
 	@Autowired
 	private PatientDao patientDao;
@@ -45,7 +45,10 @@ public class PatientServiceImpl implements PatientService {
 		return patientDao.findByFirstnameContainingIgnoreCase(patientname);
 	}
 
-	
+	@Override
+	public List<Patient> getAllPatients() {
+		return patientDao.findAll();
+	}
 
 	@Override
 	public Long getPatientsCount() {
@@ -60,13 +63,6 @@ public class PatientServiceImpl implements PatientService {
 	@Override
 	public List<Patient> getTop5PatientAddedByDate(String date) {
 		return patientDao.findTop5ByIdDesc(date);
-	}
-	
-
-	@Override
-	public List<Patient>  getAllPatient() {
-	
-		return patientDao.getAllPatient();
 	}
 
 }
