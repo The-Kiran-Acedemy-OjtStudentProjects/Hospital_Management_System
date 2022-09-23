@@ -36,6 +36,13 @@ public class PatientResource {
 	    patientService.deletePatientById(patientId);
 	}
 	
+	public Patient updatePatient(Patient patient) {
+		return patientService.updatePatient(patient);
+	}
+	
+	public List<Patient> getAllPatient(){
+		return patientService.getAllPatients();
+	}
 	
 	public List<Patient> getPatientsByName(String patientName) {
 		return patientService.getPatientsIdByPatientName(patientName);
@@ -51,12 +58,6 @@ public class PatientResource {
 	
 	public List<Patient> getTop5PatientBydate(String date){
 		return patientService.getTop5PatientAddedByDate(date);
-	}
-	
-
-	public List<Patient> getAllPatient() {
-		// TODO Auto-generated method stub
-		return patientService.getAllPatient();
 	}
 
 }

@@ -38,7 +38,7 @@
           if(userlogin.equals("admin")) {
        %>
            <li class="nav-item active  ml-5">
-            <a class="nav-link" href="admindashboard?view=admindashboard"><b><span class="text-color">Admin Dashboard</span></b><span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="admindashboard?view=dashboard"><b><span class="text-color">Admin Dashboard</span></b><span class="sr-only">(current)</span></a>
            </li>
        <%
           }
