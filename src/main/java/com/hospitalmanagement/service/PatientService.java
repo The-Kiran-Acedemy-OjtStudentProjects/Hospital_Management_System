@@ -13,4 +13,5 @@ public interface PatientService {
 	Long getPatientsCount();
 	Long getPatientsCountByDate(String registerDate);
 	List<Patient> getTop5PatientAddedByDate(String date);
+	List<Patient> getAllPatient();
 }

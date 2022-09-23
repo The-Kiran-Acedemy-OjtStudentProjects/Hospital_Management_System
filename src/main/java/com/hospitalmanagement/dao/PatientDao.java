@@ -18,4 +18,6 @@ public interface PatientDao extends JpaRepository<Patient, Integer> {
 	Long countByRegisterdate(String registeredDate);
 	@Query(value= "select * from Patient where register_date=:date ORDER BY id DESC LIMIT 6", nativeQuery=true)
 	public List<Patient> findTop5ByIdDesc(@Param("date") String date);
+	@Query(value= "SELECT * FROM Patient ", nativeQuery=true)
+	List<Patient> getAllPatient();
 }
