@@ -77,7 +77,7 @@
                  
                   <div class="form-group ml-4">
                      <label for="name">Street</label>
-                     <input type="text" class="form-control" id="street" aria-describedby="emailHelp" name="street" placeholder="Enter email id.." required>
+                     <input type="text" class="form-control" id="street" aria-describedby="emailHelp" name="street" placeholder="Enter Street.." required>
                  </div>
              </div>    
              <div class="row">

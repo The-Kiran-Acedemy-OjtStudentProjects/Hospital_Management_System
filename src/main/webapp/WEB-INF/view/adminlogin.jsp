@@ -20,7 +20,7 @@
             <form action="adminlogin" method="post">
                  <div class="form-group">
                      <label for="email">User name</label>
-                     <input type="text" class="form-control" id="username" aria-describedby="emailHelp" name="username" placeholder="Enter email id.." required>
+                     <input type="text" class="form-control" id="username" aria-describedby="emailHelp" name="username" placeholder="Enter Username.." required>
                  </div>
               
                  <div class="form-group">
