@@ -212,6 +212,7 @@
 							</div>
 							<div class="card-body text-color text-center">
 								<h3><%=patientResource.getPatientsTotalCount()%></h3>
+								<a href="<%=request.getContextPath() %>/searchAllpatientbyName">Search</a>
 							</div>
 						</div>
 
@@ -1088,15 +1089,15 @@
 							<div class="card-header text-color text-center">
 								<img src="resources/images/logo.png"
 									class="rounded mx-auto pt-2 d-inline-block" alt="img"
-									height="40px" width="40px"> <b>Total Patients</b>
+									height="40px" width="40px"> 
+									<a href="searchAllpatient">searchAllpatient</a>
 							</div>
 							<div class="card-body text-color text-center">
 								<h3><%=patientResource.getPatientsTotalCount()%></h3>
 							</div>
 						</div>
 					</div>
-
-
+                        
 
 					<div class="text-center">
 						<h3 class="text-color">Search Patient</h3>
@@ -1122,7 +1123,9 @@
 							</form>
 						</div>
 					</div>
-
+				
+				
+	
 					<div class="table-responsive">
 						<table class="table">
 							<thead class="custom-bg text-color">

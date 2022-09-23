@@ -85,6 +85,7 @@ public class PatientController {
 		return mv;
 	}
 	
+	
 	@GetMapping("/viewmypatient")
 	public String viewMyPatients() {
 		return "viewmypatient";
@@ -129,5 +130,22 @@ public class PatientController {
         mv.addObject("pharmacistResource",pharmacistResource);
 		return mv;
 	}
-
+	@GetMapping("/searchAllpatient")
+	public ModelAndView searchAllpatient() {
+		LOG.info("Searching Medicine by medicine name");
+		List<Patient> patients = patientResource.getAllPatient();
+		ModelAndView mv =new ModelAndView();
+        mv.addObject("view", AdminView.PATIENT.value());
+		mv.setViewName("admindashboard");
+		mv.addObject("patients", patients);
+		mv.addObject("appointmentResource", appointmentResource);
+		mv.addObject("medicineResource", medicineResource);
+		mv.addObject("companyResource", medicineCompanyResource);
+		mv.addObject("distributorResource", medicineDistributorResource);
+        mv.addObject("patientResource",patientResource );
+        mv.addObject("doctorResource", doctorResource);
+        mv.addObject("receptionistResource",receptionistResource);
+        mv.addObject("pharmacistResource",pharmacistResource);
+		return mv;
+	}
 }
