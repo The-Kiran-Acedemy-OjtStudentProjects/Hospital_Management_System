@@ -89,7 +89,7 @@
                <form class="form-inline ml-5" action="searchappointmentbydateandtime">
                  <div class="form-group">
                   <label for="inputPassword2" class="text-color"><h5>Search Appointments</h5></label>
-                  <input type="text" class="form-control mr-1 ml-2" id="inputPassword2" name="date" placeholder="Enter Date..">
+                  <input type="date" class="form-control mr-1 ml-2" id="inputPassword2" name="date" placeholder="Enter Date..">
                   <select name="time" class="form-control ml-2">
                        <option value="0">Select Timing</option>
                       <%
