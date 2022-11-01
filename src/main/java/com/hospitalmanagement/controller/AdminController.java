@@ -59,10 +59,14 @@ public class AdminController {
 	@Autowired
 	private ReceptionistResource receptionistResource;
 	
-	@Autowired
-	private PharmacistResource pharmacistResource;
 	
 	
+	
+	@GetMapping("/adminlogin")
+	public String goToAdminLoginPage() {
+		LOG.info("Redirecting to Admin Login Page.>");
+		return "adminlogin";
+	}
 	
 	
 	
