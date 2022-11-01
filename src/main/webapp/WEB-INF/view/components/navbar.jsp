@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-light custom-bg">
-  <a class="navbar-brand" href="/hospital-management-system/home">
+  <a class="navbar-brand" href="/home">
     <img src="resources/images/logo.png" width="35" height="35" class="d-inline-block align-top" alt="">
    <i><b><span class="text-color">Hospital Management System</span></b></i>
   </a>
