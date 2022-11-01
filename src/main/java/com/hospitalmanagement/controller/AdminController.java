@@ -64,11 +64,7 @@ public class AdminController {
 	
 	
 	
-	@GetMapping("/adminlogin")
-	public String goToAdminLoginPage() {
-		LOG.info("Redirecting to Admin Login Page.>");
-		return "adminlogin";
-	}
+	
 	
 	@GetMapping("/adminregister")
 	public String goToAdminRegisterPage() {
