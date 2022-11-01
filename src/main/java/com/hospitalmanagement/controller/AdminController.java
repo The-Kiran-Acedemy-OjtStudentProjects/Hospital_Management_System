@@ -59,8 +59,7 @@ public class AdminController {
 	@Autowired
 	private ReceptionistResource receptionistResource;
 	
-	@Autowired
-	private PharmacistResource pharmacistResource;
+	
 	
 	
 	
