@@ -36,7 +36,7 @@
                      <input type="text" class="form-control" id="firstname" aria-describedby="emailHelp" name="firstname" placeholder="Enter first name.." required>
                  </div>
                  
-                  <div class="form-group ml-4">
+                  <div class="form-group ">
                      <label for="name">Last Name</label>
                      <input type="text" class="form-control" id="lastname" aria-describedby="emailHelp" name="lastname" placeholder="Enter last name.." required>
                  </div>
@@ -51,7 +51,7 @@
                    SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");  
                    String strDate= formatter.format(date);  
                  %>
-                 <div class="form-group ml-4">
+                 <div class="form-group ">
                      <label for="email">Register Date</label>
                      <input type="text" class="form-control" id="emailid" aria-describedby="emailHelp" name="registerdate" value="<%=strDate%>" readonly required>
                  </div>
@@ -61,7 +61,7 @@
                      <label for="email">Age</label>
                      <input type="number" class="form-control" id="mobileno" aria-describedby="emailHelp" name="age" placeholder="Enter age.." required>
                   </div>
-                  <div class="form-group ml-4">
+                  <div class="form-group ">
                   <label for="email">Blood Group</label>
                    <select name="bloodgroup" class="form-control">
                        <option value="0">Select Blood Group</option>
@@ -83,7 +83,7 @@
                      <input type="number" class="form-control" id="mobileno" aria-describedby="emailHelp" name="mobileno" placeholder="Enter mobile no.." required>
                  </div>
                  
-                  <div class="form-group ml-4">
+                  <div class="form-group ">
                      <label for="name">Street</label>
                      <input type="text" class="form-control" id="street" aria-describedby="emailHelp" name="street" placeholder="Enter email id.." required>
                  </div>
@@ -94,7 +94,7 @@
                      <input type="text" class="form-control" id="city" aria-describedby="emailHelp" name="city" placeholder="Enter city.." required>
                  </div>
                  
-                 <div class="form-group   ml-4">
+                 <div class="form-group   ">
                      <label for="email">Pin code</label>
                      <input type="number" class="form-control" id="pincode" aria-describedby="emailHelp" name="pincode" placeholder="Enter pincode.." required>
                  </div>

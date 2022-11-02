@@ -33,7 +33,7 @@
                      <input type="text" class="form-control" id="firstname" aria-describedby="emailHelp" name="name" placeholder="Enter first name.." required>
                  </div>
                  
-                  <div class="form-group ml-4">
+                  <div class="form-group ">
                   <label for="email">Medicine Type</label>
                    <select name="type" class="form-control">
                        <option value="0">Select Medicine Type</option>
@@ -58,7 +58,7 @@
                      </div>
                  </div>
                  
-                 <div class="form-group ml-4">
+                 <div class="form-group ">
                      <label for="date">Expiry Date</label>
                      <input type="text" class="form-control" id="emailid" aria-describedby="emailHelp" name="expirydate" placeholder="Enter expiry date.." required>
                  </div>
@@ -69,7 +69,7 @@
                      <input type="number" class="form-control" id="mobileno" aria-describedby="emailHelp" name="quantity" placeholder="Enter quantity.." required>
                  </div>
                  
-                 <div class="form-group ml-4">
+                 <div class="form-group ">
                      <label for="email">Price</label>
                      <input type="number" class="form-control" id="mobileno" aria-describedby="emailHelp" name="price" placeholder="Enter price.." required>
                  </div>
@@ -91,8 +91,10 @@
                        %>
                    </select>
                  </div>
+                 </div>
                  
-                  <div class="form-group ml-4">
+                  <div class="row ">
+                  <div class="form-group">
                   <label for="email">Medicine Company</label>
                    <select name="companyid" class="form-control">
                        <option value="0">Select Company</option>
@@ -108,17 +110,19 @@
                        %>
                    </select>
                </div>
-             </div>  
+             </div> 
+           
              
              <%
                    Date date = new Date();  
                    SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");  
                    String strDate= formatter.format(date);  
                  %>  
-             
+             <div class="row ">
              <div class="form-group">
                      <label for="datereg">Medicine Date Added</label>
                      <input type="text" class="form-control" id="datereg" aria-describedby="emailHelp" name="dateAdded" value="<%=strDate%>" readonly required>
+                 </div>
                  </div>
           
                 <div class="container text-center">

@@ -25,7 +25,7 @@
                      <input type="text" class="form-control" id="firstname" aria-describedby="emailHelp" name="firstname" placeholder="Enter first name.." required>
                  </div>
                  
-                  <div class="form-group ml-4">
+                  <div class="form-group ">
                      <label for="name">Last Name</label>
                      <input type="text" class="form-control" id="lastname" aria-describedby="emailHelp" name="lastname" placeholder="Enter last name.." required>
                  </div>
@@ -36,7 +36,7 @@
                      <input type="text" class="form-control" id="username" aria-describedby="emailHelp" name="username" placeholder="Enter email id.." required>
                  </div>
                  
-                 <div class="form-group ml-4">
+                 <div class="form-group ">
                      <label for="email">Email</label>
                      <input type="email" class="form-control" id="emailid" aria-describedby="emailHelp" name="emailid" placeholder="Enter email id.." required>
                  </div>
@@ -47,7 +47,7 @@
                      <input type="number" class="form-control" id="mobileno" aria-describedby="emailHelp" name="mobileno" placeholder="Enter mobile no.." required>
                  </div>
                  
-                  <div class="form-group ml-4">
+                  <div class="form-group ">
                      <label for="name">Street</label>
                      <input type="text" class="form-control" id="street" aria-describedby="emailHelp" name="street" placeholder="Enter email id.." required>
                  </div>
@@ -58,7 +58,7 @@
                      <input type="text" class="form-control" id="city" aria-describedby="emailHelp" name="city" placeholder="Enter city.." required>
                  </div>
                  
-                 <div class="form-group   ml-4">
+                 <div class="form-group   ">
                      <label for="email">Pin code</label>
                      <input type="number" class="form-control" id="pincode" aria-describedby="emailHelp" name="pincode" placeholder="Enter pincode.." required>
                  </div>
@@ -72,7 +72,7 @@
                      </small>
                  </div>
                  
-                 <div class="form-group  ml-4">
+                 <div class="form-group  ">
                      <label for="password">Confirm Password</label>
                      <input type="password" class="form-control" id="confirmpassword" aria-describedby="emailHelp" name="confirmpassword" placeholder="repeat password.." required>
                  </div>
