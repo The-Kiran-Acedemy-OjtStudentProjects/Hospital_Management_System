@@ -1040,7 +1040,8 @@
 
 							<%
 	      List<Pharmacist> listOfPharmacists = (List<Pharmacist>)request.getAttribute("pharmacists");
-
+          
+		try{
 	      if(listOfPharmacists != null) {
 	          for(Pharmacist r : listOfPharmacists) {
 	     
@@ -1059,7 +1060,16 @@
 							<%
 	          }
 	      }
-	    %>
+		} catch(Exception e) {
+			%>
+			<tbody>
+				<tr class="text-center">
+					<td class="mid-align">No Record Found</td>
+				</tr>
+			</tbody>
+			<%
+			}
+			%>
 						</table>
 					</div>
 
