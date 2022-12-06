@@ -8,6 +8,11 @@ public interface AppointmentService {
 	Appointment addAppointment(Appointment appointment);
 	Appointment updateAppointment(Appointment appointment);
 	Appointment getAppointmentById(int appointmentId);
+	
+	// this method  for search Appoinment by status 
+	List<Appointment> searchAppointmentByStatus(String treatmentstatus);
+	
+	
 	List<Appointment> getAppointmentsByPatientsId(List<Integer> patientsId);
 	List<Appointment> getAppointmentsByDoctorIdAndAppointmentDate(int doctorId, String appointmentDate);
 	List<Appointment> getAppointmentsByDoctorIdAndAppointmentDate(int doctorId, String appointmentDate, String appointmentTime);
@@ -20,4 +25,5 @@ public interface AppointmentService {
 	Long getCountByTreatmentStatusAndBillingDate(String treatmentStatus, String billingDate);
 	List<Appointment> getAllAppointments();
 	List<Appointment> getTop5AppointmentsByDate(String date);
+	
 }

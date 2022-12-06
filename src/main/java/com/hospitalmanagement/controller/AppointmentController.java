@@ -116,6 +116,19 @@ public class AppointmentController {
 		return mv;
 	}
 	
+	// this method  for search Appoinment by status 
+	@GetMapping("/searchappointmentbystatus")
+		public ModelAndView searchAppointmentByStatus(@RequestParam String treatmentstatus) {
+		LOG.info("Searching appointment by status");
+		List<Appointment> appointments = appointmentResource.searchAppointmentByStatus(treatmentstatus);
+		ModelAndView mv =new ModelAndView();
+		mv.setViewName("searchappointment");
+		mv.addObject("patientResource", patientResource);
+		mv.addObject("doctorResource", doctorResource);
+		mv.addObject("appointments", appointments);
+		return mv;
+		}
+	
 	@GetMapping("/searchappointmentbypatientname")
 	public ModelAndView searchAppointmentByPatientName(@RequestParam String patientname) {
 		LOG.info("Searching appointment by patient name");
@@ -130,6 +143,7 @@ public class AppointmentController {
 	
 	@GetMapping("/searchappointmentbydate")
 	public ModelAndView searchAppointmentByDate(@RequestParam String appointmentdate) {
+		System.out.println(appointmentdate);
 		LOG.info("Searching appointment by date");
 		List<Appointment> appointments = appointmentResource.getAppointmentsByDate(appointmentdate);
 		ModelAndView mv =new ModelAndView();

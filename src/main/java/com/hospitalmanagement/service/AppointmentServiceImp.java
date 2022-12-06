@@ -29,6 +29,13 @@ public class AppointmentServiceImp implements AppointmentService {
 		else
 			return null;
 	}
+	
+	
+	// this method  for search Appoinment by status 
+	@Override
+	public List<Appointment> searchAppointmentByStatus(String treatmentstatus) {					
+		return appointmentDao.findByTreatmentstatus(treatmentstatus);
+	}
 
 	@Override
 	public List<Appointment> getAppointmentsByPatientsId(List<Integer> patientsId) {
@@ -95,5 +102,7 @@ public class AppointmentServiceImp implements AppointmentService {
 	public List<Appointment> getTop5AppointmentsByDate(String date) {
 		return appointmentDao.findTop5ByIdDesc(date);
 	}
+
+	
 	
 }
