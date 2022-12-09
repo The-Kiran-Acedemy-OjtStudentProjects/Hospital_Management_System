@@ -96,8 +96,13 @@ public class PatientController {
 		LOG.info("Searching medicine by id");
 		Patient patient = patientResource.getPatientById(patientId);
 		List<Patient> patients = new ArrayList<Patient>();
-		patients.add(patient);
 		ModelAndView mv =new ModelAndView();
+		if(patient!=null){
+			patients.add(patient);
+			}
+			else{
+				mv.addObject("msg", "patient id not Found:-"+patientId);
+			}
 		mv.addObject("view", AdminView.PATIENT.value());
 		mv.setViewName("admindashboard");
 		mv.addObject("patients", patients);
