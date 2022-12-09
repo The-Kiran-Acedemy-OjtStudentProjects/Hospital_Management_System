@@ -105,10 +105,14 @@ public class AppointmentController {
 	@GetMapping("/searchappointmentbyid")
 	public ModelAndView searchAppointmentById(@RequestParam int appointmentid) {
 		LOG.info("Searching appointment by id");
+		ModelAndView mv =new ModelAndView();
 		List<Appointment> appointments = new ArrayList<>();
 		Appointment appointment = appointmentResource.getAppointmentById(appointmentid);
-		appointments.add(appointment);
-		ModelAndView mv =new ModelAndView();
+		if(appointment != null) {
+			appointments.add(appointment);
+		}else {
+			mv.addObject("errormsg", "Appointment not found for " + appointmentid);
+		}
 		mv.setViewName("searchappointment");
 		mv.addObject("patientResource", patientResource);
 		mv.addObject("doctorResource", doctorResource);
@@ -121,10 +125,13 @@ public class AppointmentController {
 		LOG.info("Searching appointment by patient name");
 		List<Appointment> appointments = appointmentResource.getAppointmentsByPatientName(patientname);
 		ModelAndView mv =new ModelAndView();
+		if(appointments.isEmpty()) {
+			mv.addObject("errormsg", "Appointment not found for " + patientname);
+		}
 		mv.setViewName("searchappointment");
 		mv.addObject("patientResource", patientResource);
 		mv.addObject("doctorResource", doctorResource);
-		mv.addObject("appointments", appointments);
+		mv.addObject("appointments", appointments);	
 		return mv;
 	}
 	
