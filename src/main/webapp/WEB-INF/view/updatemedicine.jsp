@@ -7,7 +7,7 @@
 <%@ page import ="com.hospitalmanagement.resource.*"%>
 <%@ page import ="com.hospitalmanagement.constants.*"%>
 <%@ page import ="java.sql.*"%>
-<%@ page import ="java.util.*"%>
+<%@ page import ="java.util.*"%>  
 <!DOCTYPE html>
 <html>
 <head>
@@ -36,13 +36,13 @@
                   <input type="text" class="form-control" id="id" aria-describedby="emailHelp" name="id" value="<%=medicine.getId()%>" readonly required>
              </div>
             
-            <div class="row">
+            <div class="form-group">
                  <div class="form-group">
                      <label for="name">Name</label>
                      <input type="text" class="form-control" id="firstname" aria-describedby="emailHelp" name="name" value="<%= medicine.getName()%>" required>
                  </div>
                  
-                  <div class="form-group ml-4">
+                  <div class="form-group">
                   <label for="email">Medicine Type</label>
                    <select name="type" class="form-control">
                        <option value="0">Select Medicine Type</option>
@@ -58,32 +58,32 @@
                    </select>
                </div>
             </div>  
-            <div class="row">   
+            <div class="form-group">   
                  <div class="form-group">
                      <label for="date">Manufacture Date</label>
                      <div class="input-group date">
-                     <input type="text" class="form-control" id="username" aria-describedby="emailHelp" name="manufacturedate" value="<%= medicine.getManufacturedate()%>" required>
+                     <input type="date" class="form-control" id="username" aria-describedby="emailHelp" name="manufacturedate" value="<%= medicine.getManufacturedate()%>" required>
                     
                      </div>
                  </div>
                  
-                 <div class="form-group ml-4">
+                 <div class="form-group">
                      <label for="date">Expiry Date</label>
-                     <input type="text" class="form-control" id="emailid" aria-describedby="emailHelp" name="expirydate" value="<%= medicine.getExpirydate()%>" required>
+                     <input type="date" class="form-control" id="emailid" aria-describedby="emailHelp" name="expirydate" value="<%= medicine.getExpirydate()%>" required>
                  </div>
             </div>
-            <div class="row">     
+            <div class="form-group">     
                   <div class="form-group">
                      <label for="email">Quantity</label>
                      <input type="number" class="form-control" id="mobileno" aria-describedby="emailHelp" name="quantity" value="<%= medicine.getQuantity()%>" required>
                  </div>
                  
-                 <div class="form-group ml-4">
+                 <div class="form-group">
                      <label for="email">Price</label>
                      <input type="number" class="form-control" id="mobileno" aria-describedby="emailHelp" name="price" value="<%= medicine.getPrice()%>" required>
                  </div>
              </div>   
-            <div class="row">     
+            <div class="form-group">     
                   <div class="form-group">
                   <label for="email">Medicine Distributor</label>
                    <select name="distributorid" class="form-control">
@@ -101,7 +101,7 @@
                    </select>
                  </div>
                  
-                  <div class="form-group ml-4">
+                  <div class="form-group">
                   <label for="email">Medicine Company</label>
                    <select name="companyid" class="form-control">
                        <option value="0">Select Company</option>
@@ -121,7 +121,7 @@
              
              <div class="form-group">
                      <label for="datereg">Medicine Date Added</label>
-                     <input type="text" class="form-control" id="datereg" aria-describedby="emailHelp" name="dateAdded" value="<%= medicine.getDateAdded()%>" readonly required>
+                     <input type="date" class="form-control" id="datereg" aria-describedby="emailHelp" name="dateAdded" value="<%= medicine.getDateAdded()%>"  required>
                  </div>
           
                 <div class="container text-center">
