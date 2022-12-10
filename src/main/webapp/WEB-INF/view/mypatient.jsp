@@ -24,6 +24,7 @@
     SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");  
     String strDate= formatter.format(date);  
 %>
+<div class="W-100 p-3">
 <div class="row mt-4">
     <div class="col-md-6">
         <div class="card">
@@ -150,6 +151,7 @@
             </div>
         </div>
     </div>
-</div>  
+</div> 
+</div> 
 </body>
 </html>
