@@ -14,17 +14,17 @@ public class AppointmentServiceImp implements AppointmentService {
 
 	@Autowired
 	private AppointmentDao appointmentDao;
-	
+
 	@Override
 	public Appointment addAppointment(Appointment appointment) {
-		return appointmentDao.save(appointment); 
+		return appointmentDao.save(appointment);
 	}
 
 	@Override
 	public Appointment getAppointmentById(int appointmentId) {
-        Optional<Appointment> optional = appointmentDao.findById(appointmentId);
-		
-		if(optional.isPresent())
+		Optional<Appointment> optional = appointmentDao.findById(appointmentId);
+
+		if (optional.isPresent())
 			return optional.get();
 		else
 			return null;
@@ -43,7 +43,8 @@ public class AppointmentServiceImp implements AppointmentService {
 	@Override
 	public List<Appointment> getAppointmentsByDoctorIdAndAppointmentDate(int doctorId, String appointmentDate,
 			String appointmentTime) {
-		return appointmentDao.findByDoctoridAndAppointmentdateAndAppointmenttime(doctorId, appointmentDate, appointmentTime);
+		return appointmentDao.findByDoctoridAndAppointmentdateAndAppointmenttime(doctorId, appointmentDate,
+				appointmentTime);
 	}
 
 	@Override
@@ -63,7 +64,11 @@ public class AppointmentServiceImp implements AppointmentService {
 
 	@Override
 	public double getSumOfPriceUsingBillingDate(String billingDate) {
-		return appointmentDao.sumOfPrice(billingDate);
+		Double sumOfPrice = appointmentDao.sumOfPrice(billingDate);
+		if (sumOfPrice != null) {
+			return sumOfPrice;
+		}
+		return 0;
 	}
 
 	@Override
@@ -95,5 +100,5 @@ public class AppointmentServiceImp implements AppointmentService {
 	public List<Appointment> getTop5AppointmentsByDate(String date) {
 		return appointmentDao.findTop5ByIdDesc(date);
 	}
-	
+
 }

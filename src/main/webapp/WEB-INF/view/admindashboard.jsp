@@ -98,8 +98,8 @@
 							</div>
 							<div class="card-body text-color text-center">
 								<%
-							Long count =appointmentResource.getAppointmentCountByDate(todayDate);
-							%>
+								Long count = appointmentResource.getAppointmentCountByDate(todayDate);
+								%>
 								<h3><%=count%></h3>
 							</div>
 						</div>
@@ -278,27 +278,33 @@
 										</tr>
 									</thead>
 									<%
-									    List<Appointment> aps = appointmentResource.getTop5AppointmentsByDate(todayDate);
-									    for(Appointment a : aps){
+									List<Appointment> aps = appointmentResource.getTop5AppointmentsByDate(todayDate);
+									for (Appointment a : aps) {
 									%>
 
 									<tbody>
 										<tr>
-											<th scope="row"><%=a.getId() %></th>
+											<th scope="row"><%=a.getId()%></th>
 											<td><%=patientResource.getPatientById(a.getPatientid()).getFirstname()%></td>
 											<td><%=doctorResource.getDoctorById(a.getDoctorid()).getFirstname()%></td>
-											<td><%=a.getAppointmentdate() %></td>
-											<td><%=a.getTreatmentprice() %></td>
+											<td><%=a.getAppointmentdate()%></td>
+											<td><%=a.getTreatmentprice()%></td>
 											<td>
-												<% if(a.getWantMedicine() == null ){%>No<% } else{%><%=a.getWantMedicine() %>
-												<%} %>
+												<%
+												if (a.getWantMedicine() == null) {
+												%>No<%
+												} else {
+												%><%=a.getWantMedicine()%>
+												<%
+												}
+												%>
 											</td>
-											<td><%=a.getTreatmentstatus() %></td>
+											<td><%=a.getTreatmentstatus()%></td>
 										</tr>
 
 									</tbody>
 									<%
-									    }
+									}
 									%>
 								</table>
 							</div>
@@ -328,22 +334,22 @@
 										</tr>
 									</thead>
 									<%
-									    List<Patient> pats = patientResource.getTop5PatientBydate(todayDate);
-									    for(Patient p : pats){
+									List<Patient> pats = patientResource.getTop5PatientBydate(todayDate);
+									for (Patient p : pats) {
 									%>
 									<tbody>
 										<tr>
-											<th scope="row"><%=p.getId() %></th>
-											<td><%=p.getFirstname() %></td>
-											<td><%=p.getLastname() %></td>
-											<td><%=p.getAge() %></td>
-											<td><%=p.getBloodgroup() %></td>
-											<td><%=p.getCity() %></td>
-											<td><%=p.getEmailid() %></td>
+											<th scope="row"><%=p.getId()%></th>
+											<td><%=p.getFirstname()%></td>
+											<td><%=p.getLastname()%></td>
+											<td><%=p.getAge()%></td>
+											<td><%=p.getBloodgroup()%></td>
+											<td><%=p.getCity()%></td>
+											<td><%=p.getEmailid()%></td>
 										</tr>
 									</tbody>
 									<%
-									    }
+									}
 									%>
 								</table>
 							</div>
@@ -372,20 +378,20 @@
 										</tr>
 									</thead>
 									<%
-									    List<Medicine> meds = medicineResource.getTop5MedicinesByDate(todayDate);
-									    for(Medicine m : meds){
+									List<Medicine> meds = medicineResource.getTop5MedicinesByDate(todayDate);
+									for (Medicine m : meds) {
 									%>
 									<tbody>
 										<tr>
-											<td><%=m.getName() %></td>
-											<td><%=m.getType() %></td>
-											<td><%=companyResource.getCompanyById(m.getCompanyid()).getName() %></td>
-											<td><%=distributorResource.getDistributorById(m.getDistributorid()).getName() %></td>
-											<td><%=m.getPrice() %></td>
+											<td><%=m.getName()%></td>
+											<td><%=m.getType()%></td>
+											<td><%=companyResource.getCompanyById(m.getCompanyid()).getName()%></td>
+											<td><%=distributorResource.getDistributorById(m.getDistributorid()).getName()%></td>
+											<td><%=m.getPrice()%></td>
 										</tr>
 									</tbody>
 									<%
-									    }
+									}
 									%>
 								</table>
 							</div>
@@ -414,20 +420,20 @@
 									</thead>
 
 									<%
-									    List<MedicineCompany> comps = companyResource.getTop5CompanysByDateAdded(todayDate);
-									    for(MedicineCompany m : comps){
+									List<MedicineCompany> comps = companyResource.getTop5CompanysByDateAdded(todayDate);
+									for (MedicineCompany m : comps) {
 									%>
 
 									<tbody>
 										<tr>
-											<th scope="row"><%=m.getName() %></th>
-											<td><%=m.getEmailid() %></td>
-											<td><%=m.getMobileno() %></td>
-											<td><%=m.getCity() %></td>
+											<th scope="row"><%=m.getName()%></th>
+											<td><%=m.getEmailid()%></td>
+											<td><%=m.getMobileno()%></td>
+											<td><%=m.getCity()%></td>
 										</tr>
 									</tbody>
 									<%
-									    }
+									}
 									%>
 								</table>
 							</div>
@@ -455,20 +461,20 @@
 										</tr>
 									</thead>
 									<%
-									    List<MedicineDistributor> dis = distributorResource.getTop5DistributorAddedByDate(todayDate);
-									    for(MedicineDistributor m : dis){
+									List<MedicineDistributor> dis = distributorResource.getTop5DistributorAddedByDate(todayDate);
+									for (MedicineDistributor m : dis) {
 									%>
 
 									<tbody>
 										<tr>
-											<th scope="row"><%=m.getName() %></th>
-											<td><%=m.getEmailid() %></td>
-											<td><%=m.getMobileno() %></td>
-											<td><%=m.getCity() %></td>
+											<th scope="row"><%=m.getName()%></th>
+											<td><%=m.getEmailid()%></td>
+											<td><%=m.getMobileno()%></td>
+											<td><%=m.getCity()%></td>
 										</tr>
 									</tbody>
 									<%
-									    }
+									}
 									%>
 								</table>
 							</div>
@@ -533,7 +539,8 @@
 									Done Today</b>
 							</div>
 							<div class="card-body text-color text-center">
-								<h3><%=appointmentResource.getAppointmentCountByTreatmentStatusAndBillingDate(DatabaseConstants.TreatmentStatus.DONE.value(), todayDate)%></h3>
+								<h3><%=appointmentResource
+		.getAppointmentCountByTreatmentStatusAndBillingDate(DatabaseConstants.TreatmentStatus.DONE.value(), todayDate)%></h3>
 							</div>
 						</div>
 					</div>
@@ -570,10 +577,10 @@
 								<button type="submit" class="btn text-color custom-bg ml-2">Search</button>
 							</form>
 							<%
-						Date dat = new Date();  
-		                   SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy");  
-						String strDat = format.format(dat);
-						%>
+							Date dat = new Date();
+							SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy");
+							String strDat = format.format(dat);
+							%>
 							<a href="searchappointmentbyDate?appointmentdate=<%=strDat%>"
 								class="ml-1"><button class="btn text-color custom-bg ml-2">Get
 									Todays Appointments</button></a>
@@ -634,7 +641,7 @@
 				</div>
 				<%
 				}
-				
+
 				else if (view.equals(DatabaseConstants.AdminView.MEDICINE.value())) {
 				%>
 				<div class="row">
@@ -735,46 +742,51 @@
 							</thead>
 
 							<%
-      List<Medicine> listOfMedicines = (List<Medicine>)request.getAttribute("medicines");
-      MedicineResource mResource = (MedicineResource)request.getAttribute("medicineResource");
-      MedicineCompanyResource medicineCompanyResource = (MedicineCompanyResource)request.getAttribute("companyResource");
-      MedicineDistributorResource medicineDistributorResource = (MedicineDistributorResource)request.getAttribute("distributorResource");
+							List<Medicine> listOfMedicines = (List<Medicine>) request.getAttribute("medicines");
+							MedicineResource mResource = (MedicineResource) request.getAttribute("medicineResource");
+							MedicineCompanyResource medicineCompanyResource = (MedicineCompanyResource) request.getAttribute("companyResource");
+							MedicineDistributorResource medicineDistributorResource = (MedicineDistributorResource) request
+									.getAttribute("distributorResource");
 
-      if(listOfMedicines != null) {
-          for(Medicine m : listOfMedicines) {
-        	  MedicineCompany c = medicineCompanyResource.getCompanyById(m.getCompanyid());
-              MedicineDistributor d = medicineDistributorResource.getDistributorById(m.getDistributorid());
-                
-            %>
+							if (listOfMedicines != null) {
+								for (Medicine m : listOfMedicines) {
+									MedicineCompany c = medicineCompanyResource.getCompanyById(m.getCompanyid());
+									MedicineDistributor d = medicineDistributorResource.getDistributorById(m.getDistributorid());
+							%>
 							<tbody>
 								<tr class="text-center">
 									<td class="mid-align"><%=m.getId()%></td>
-									<td class="mid-align"><%=m.getName() %></td>
-									<td class="mid-align"><%=m.getType() %></td>
-									<td class="mid-align"><%=m.getPrice() %></td>
+									<td class="mid-align"><%=m.getName()%></td>
+									<td class="mid-align"><%=m.getType()%></td>
+									<td class="mid-align"><%=m.getPrice()%></td>
 									<td
-										class="mid-align <% if(m.getQuantity() == 0){ %> text-danger <% } %>">
-										<% if(m.getQuantity() == 0){ %>Out Of Stock <% } else {%><%=m.getQuantity()%>
-										<% } %>
+										class="mid-align <%if (m.getQuantity() == 0) {%> text-danger <%}%>">
+										<%
+										if (m.getQuantity() == 0) {
+										%>Out Of Stock <%
+										} else {
+										%><%=m.getQuantity()%>
+										<%
+										}
+										%>
 									</td>
 									<td class="mid-align"><%=c.getName()%></td>
-									<td class="mid-align"><%=d.getName() %></td>
-									<td class="mid-align"><%=m.getManufacturedate() %></td>
-									<td class="mid-align"><%=m.getExpirydate() %></td>
+									<td class="mid-align"><%=d.getName()%></td>
+									<td class="mid-align"><%=m.getManufacturedate()%></td>
+									<td class="mid-align"><%=m.getExpirydate()%></td>
 								</tr>
 							</tbody>
 							<%
-          }
-      }
-    %>
+							}
+							}
+							%>
 						</table>
 					</div>
 
 				</div>
 				<%
-				}
-				else if (view.equals(DatabaseConstants.AdminView.DOCTOR.value())) {
-					%>
+				} else if (view.equals(DatabaseConstants.AdminView.DOCTOR.value())) {
+				%>
 				<div class="row">
 					<div class="col-sm-6">
 						<div class="card card-border">
@@ -844,36 +856,34 @@
 							</thead>
 
 							<%
-	      List<Doctor> listOfDoctors = (List<Doctor>)request.getAttribute("doctors");
+							List<Doctor> listOfDoctors = (List<Doctor>) request.getAttribute("doctors");
 
-	      if(listOfDoctors != null) {
-	          for(Doctor d : listOfDoctors) {
-	     
-	            %>
+							if (listOfDoctors != null) {
+								for (Doctor d : listOfDoctors) {
+							%>
 							<tbody>
 								<tr class="text-center">
 									<td class="mid-align"><%=d.getId()%></td>
-									<td class="mid-align"><%=d.getFirstname() %></td>
+									<td class="mid-align"><%=d.getFirstname()%></td>
 									<td class="mid-align"><%=d.getSpecialist()%></td>
-									<td class="mid-align"><%=d.getAge() %></td>
+									<td class="mid-align"><%=d.getAge()%></td>
 									<td class="mid-align"><%=d.getMobileno()%></td>
-									<td class="mid-align"><%=d.getEmailid() %></td>
-									<td class="mid-align"><%=d.getUsername() %></td>
-									<td class="mid-align"><%=d.getCity() %></td>
+									<td class="mid-align"><%=d.getEmailid()%></td>
+									<td class="mid-align"><%=d.getUsername()%></td>
+									<td class="mid-align"><%=d.getCity()%></td>
 								</tr>
 							</tbody>
 							<%
-	          }
-	      }
-	    %>
+							}
+							}
+							%>
 						</table>
 					</div>
 
 				</div>
 				<%
-					}
-				else if (view.equals(DatabaseConstants.AdminView.RECEPTIONIST.value())) {
-					%>
+				} else if (view.equals(DatabaseConstants.AdminView.RECEPTIONIST.value())) {
+				%>
 				<div class="row">
 					<div class="col-sm-6">
 						<div class="card card-border">
@@ -942,35 +952,33 @@
 							</thead>
 
 							<%
-	      List<Receptionist> listOfReceptionists = (List<Receptionist>)request.getAttribute("receptionists");
+							List<Receptionist> listOfReceptionists = (List<Receptionist>) request.getAttribute("receptionists");
 
-	      if(listOfReceptionists != null) {
-	          for(Receptionist r : listOfReceptionists) {
-	     
-	            %>
+							if (listOfReceptionists != null) {
+								for (Receptionist r : listOfReceptionists) {
+							%>
 							<tbody>
 								<tr class="text-center">
 									<td class="mid-align"><%=r.getId()%></td>
-									<td class="mid-align"><%=r.getFirstname() %></td>
+									<td class="mid-align"><%=r.getFirstname()%></td>
 									<td class="mid-align"><%=r.getEmailid()%></td>
 									<td class="mid-align"><%=r.getMobileno()%></td>
 									<td class="mid-align"><%=r.getAge()%></td>
-									<td class="mid-align"><%=r.getUsername() %></td>
-									<td class="mid-align"><%=r.getCity() %></td>
+									<td class="mid-align"><%=r.getUsername()%></td>
+									<td class="mid-align"><%=r.getCity()%></td>
 								</tr>
 							</tbody>
 							<%
-	          }
-	      }
-	    %>
+							}
+							}
+							%>
 						</table>
 					</div>
 
 				</div>
 				<%
-					}
-					else if (view.equals(DatabaseConstants.AdminView.PHARMACIST.value())) {
-					%>
+				} else if (view.equals(DatabaseConstants.AdminView.PHARMACIST.value())) {
+				%>
 				<div class="row">
 					<div class="col-sm-6">
 						<div class="card card-border">
@@ -1039,35 +1047,33 @@
 							</thead>
 
 							<%
-	      List<Pharmacist> listOfPharmacists = (List<Pharmacist>)request.getAttribute("pharmacists");
+							List<Pharmacist> listOfPharmacists = (List<Pharmacist>) request.getAttribute("pharmacists");
 
-	      if(listOfPharmacists != null) {
-	          for(Pharmacist r : listOfPharmacists) {
-	     
-	            %>
+							if (listOfPharmacists != null) {
+								for (Pharmacist r : listOfPharmacists) {
+							%>
 							<tbody>
 								<tr class="text-center">
 									<td class="mid-align"><%=r.getId()%></td>
-									<td class="mid-align"><%=r.getFirstname() %></td>
+									<td class="mid-align"><%=r.getFirstname()%></td>
 									<td class="mid-align"><%=r.getEmailid()%></td>
 									<td class="mid-align"><%=r.getMobileno()%></td>
 									<td class="mid-align"><%=r.getAge()%></td>
-									<td class="mid-align"><%=r.getUsername() %></td>
-									<td class="mid-align"><%=r.getCity() %></td>
+									<td class="mid-align"><%=r.getUsername()%></td>
+									<td class="mid-align"><%=r.getCity()%></td>
 								</tr>
 							</tbody>
 							<%
-	          }
-	      }
-	    %>
+							}
+							}
+							%>
 						</table>
 					</div>
 
 				</div>
 				<%
-					}
-					else if (view.equals(DatabaseConstants.AdminView.PATIENT.value())) {
-					%>
+				} else if (view.equals(DatabaseConstants.AdminView.PATIENT.value())) {
+				%>
 				<div class="row">
 					<div class="col-sm-6">
 						<div class="card card-border">
@@ -1088,8 +1094,7 @@
 							<div class="card-header text-color text-center">
 								<img src="resources/images/logo.png"
 									class="rounded mx-auto pt-2 d-inline-block" alt="img"
-									height="40px" width="40px">
-									<a href="searchAllpatient">searchAllpatient</a>
+									height="40px" width="40px"> <a href="searchAllpatient">searchAllpatient</a>
 							</div>
 							<div class="card-body text-color text-center">
 								<h3><%=patientResource.getPatientsTotalCount()%></h3>
@@ -1139,35 +1144,33 @@
 							</thead>
 
 							<%
-	      List<Patient> listOfPatients = (List<Patient>)request.getAttribute("patients");
+							List<Patient> listOfPatients = (List<Patient>) request.getAttribute("patients");
 
-	      if(listOfPatients != null) {
-	          for(Patient r : listOfPatients) {
-	     
-	            %>
+							if (listOfPatients != null) {
+								for (Patient r : listOfPatients) {
+							%>
 							<tbody>
 								<tr class="text-center">
 									<td class="mid-align"><%=r.getId()%></td>
-									<td class="mid-align"><%=r.getFirstname() %></td>
+									<td class="mid-align"><%=r.getFirstname()%></td>
 									<td class="mid-align"><%=r.getEmailid()%></td>
 									<td class="mid-align"><%=r.getMobileno()%></td>
 									<td class="mid-align"><%=r.getAge()%></td>
-									<td class="mid-align"><%=r.getBloodgroup() %></td>
-									<td class="mid-align"><%=r.getCity() %></td>
+									<td class="mid-align"><%=r.getBloodgroup()%></td>
+									<td class="mid-align"><%=r.getCity()%></td>
 								</tr>
 							</tbody>
 							<%
-	          }
-	      }
-	    %>
+							}
+							}
+							%>
 						</table>
 					</div>
 
 				</div>
 				<%
-					}
-					else if (view.equals(DatabaseConstants.AdminView.EARNING.value())) {
-					%>
+				} else if (view.equals(DatabaseConstants.AdminView.EARNING.value())) {
+				%>
 				<div class="row">
 					<div class="col-sm-3">
 						<div class="card card-border">
@@ -1227,10 +1230,10 @@
 					</div>
 				</div>
 				<%
-				         	}    
-						%>
+				}
+				%>
 
-
+				<h4 style="color: red; text-align: center;">${msg}</h4>
 			</div>
 		</div>
 	</div>

@@ -147,7 +147,7 @@ public final class DatabaseConstants {
 	}
 	
 	public enum AdminView {
-		DASHBOARD("dashboard"),
+		DASHBOARD("admindashboard"),
 		APPOINTMENT("appointment"),
 		MEDICINE("medicine"),
 		DOCTOR("doctor"),
