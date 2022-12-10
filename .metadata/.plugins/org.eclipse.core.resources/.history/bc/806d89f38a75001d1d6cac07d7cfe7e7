@@ -1,0 +1,13 @@
+package com.hms.api.exception;
+
+public class FailedToAddMedicineException extends RuntimeException{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	public FailedToAddMedicineException(String message) {
+		super(message);
+	}
+}

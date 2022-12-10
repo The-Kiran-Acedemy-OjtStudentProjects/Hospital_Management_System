@@ -1,0 +1,105 @@
+package com.hms.api.daoimpl;
+
+import java.util.List;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import com.hms.api.dao.MedicineDao;
+import com.hms.api.entity.Medicine;
+
+/**
+ * @author RAM
+ *
+ */
+@Repository
+public class MedicineDaoIMPL implements MedicineDao{
+	
+	@Autowired
+	SessionFactory sessionFactory;
+
+	@Override
+	public Medicine addMedicine(Medicine medicine) {
+	
+		Session session = sessionFactory.openSession();
+		Transaction transaction = session.beginTransaction();
+		Medicine medicineDB = null;
+		try {
+			medicineDB=session.get(Medicine.class, medicine.getId());
+			if(medicineDB==null) {
+				session.save(medicine);
+				transaction.commit();
+				return medicine;
+			}else {
+				return null;
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		
+	}
+
+	@Override
+	public List<Medicine> findByNameContainingIgnoreCase(String medicineName) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Medicine findByName(String medicineName) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Medicine> findByQuantityGreaterThan(int quantity) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Long countByDateAdded(String dateAdded) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Long getTotalCount() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Medicine> findTop5ByIdDesc(String date) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean deleteMedicineById(Integer id) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public Medicine getMedicineById(Integer id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Medicine updateMedicine(Medicine medicine) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Medicine> getAllMedicine() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

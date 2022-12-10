@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN" monitorInterval="30">
+	<Properties>
+		<Property name="LOG_PATTERN">
+			%d{yyyy-MM-dd HH:mm:ss.SSS} %5p ${hostName} --- [%15.15t] %-40.40c{1.} : %m%n%ex
+		</Property>
+	</Properties>
+	<Appenders>
+		<Console name="ConsoleAppender" target="SYSTEM_OUT"
+			follow="true">
+			<PatternLayout pattern="${LOG_PATTERN}" />
+		</Console>
+		<!-- Rolling File Appender -->
+		<RollingFile name="FileAppender"
+			fileName="/logs/mylogs.log"
+			filePattern="logs/log4j2-demo-%d{yyyy-MM-dd}-%i.log">
+			<PatternLayout>
+				<Pattern>${LOG_PATTERN}</Pattern>
+			</PatternLayout>
+			<Policies>
+				<SizeBasedTriggeringPolicy size="10MB" />
+			</Policies>
+			<DefaultRolloverStrategy max="10" />
+		</RollingFile>
+	</Appenders>
+	<Loggers>
+		<Logger name="com.hospitalmanagement" level="debug"
+			additivity="true">
+			<AppenderRef ref="ConsoleAppender" />
+			<AppenderRef ref="FileAppender"/>
+		</Logger>
+
+		<Root level="info">
+			<AppenderRef ref="ConsoleAppender" />
+			 <AppenderRef ref="FileAppender"/>
+		</Root>
+		
+		<Logger name="org.eclipse.jetty" level="OFF" />
+
+		<Logger name="io.swagger" level="OFF" additivity="false" />
+
+		<Logger name="org.springframework.orm" level="OFF" />
+		<Logger name="org.springframework.boot" level="INFO" />
+
+		<Logger name="com.mchange.v2" level="OFF" />
+
+		<Logger name="org.springframework.beans.factory.support"
+			level="OFF" />
+
+		<Logger name="org.springframework.web" level="DEBUG" />
+		<Logger name="org.springframework.core" level="OFF" />
+		<Logger name="org.springframework.jndi" level="OFF" />
+		<Logger name="org.springframework.aop" level="OFF" />
+		<Logger name="org.springframework.context" level="OFF" />
+		<Logger name="org.springframework.transaction" level="OFF" />
+
+		<Logger name="org.reflections" level="OFF" />
+		<Logger name="org.springframework.beans" level="OFF" />
+
+		<Logger name="org.hibernate" level="OFF" />
+		<Logger name="org.jboss" level="OFF" />
+		<Logger name="org.apache.commons" level="OFF" />
+
+		<Logger name="springfox.documentation" level="OFF" />
+
+		<Logger name="org.apache.http" level="FATAL" />
+	</Loggers>
+</Configuration>

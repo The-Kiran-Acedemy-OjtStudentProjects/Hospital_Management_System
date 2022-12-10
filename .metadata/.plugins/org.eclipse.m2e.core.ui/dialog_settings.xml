@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="MavenProjectImportWizardPage">
+		<list key="rootDirectory">
+			<item value="C:\Users\kambl\Downloads\Spring-Boot-WebSocket-master"/>
+			<item value="E:\Project\HMS-main"/>
+			<item value="C:\Users\kambl\Downloads\Hospital_Management_System"/>
+			<item value="C:\Users\kambl\Downloads\HMS-main"/>
+			<item value="C:\Users\kambl\Downloads\Handover for Study"/>
+			<item value="E:\Industrial Sessions\Repositories\Hospital_Management_System-main"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+	<section name="org.eclipse.m2e.core.pom.overview">
+	</section>
+	<section name="org.eclipse.m2e.core.pom.dependencies">
+	</section>
+</section>

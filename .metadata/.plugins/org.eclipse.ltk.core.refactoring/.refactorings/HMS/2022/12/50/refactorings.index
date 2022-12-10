@@ -1,0 +1,14 @@
+1670328692198	Extract local variable 'session'
+1670329280167	Extract local variable 'transaction'
+1670329786915	Extract local variable 'addMedicine'
+1670340875328	Extract local variable 'session'
+1670340891944	Extract local variable 'transaction'
+1670341087697	Extract local variable 'createSQLQuery'
+1670343958705	Extract local variable 'criteria'
+1670344093927	Extract local variable 'add'
+1670344443322	Extract local variable 'like'
+1670345087919	Infer generic type arguments
+1670346713190	Extract local variable 'medicineByName'
+1670346909045	Extract local variable 'medicinesByName'
+1670347511191	Delete element
+1670347517043	Delete element

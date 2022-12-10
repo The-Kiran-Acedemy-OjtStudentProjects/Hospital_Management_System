@@ -1,0 +1,64 @@
+package com.hms.api.controller;
+
+
+import java.util.List;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.hms.api.entity.Medicine;
+import com.hms.api.exception.FailedToAddMedicineException;
+import com.hms.api.exception.MedicineNotFoundException;
+import com.hms.api.service.MedicineService;
+
+/**
+ * @author RAM
+ *
+ */
+@RestController
+@RequestMapping(value = "/medicine")
+public class MedicineController {
+	
+	@Autowired
+	MedicineService medicineService;
+	
+    private static Logger LOG = LogManager.getLogger(MedicineController.class);
+    
+    @PostMapping(value="/addMedicine")
+    public ResponseEntity<Medicine> addMedicine(@RequestBody Medicine medicine) {
+    	
+    	Medicine addMedicine = medicineService.addMedicine(medicine);
+    	if(addMedicine != null) {
+    		LOG.info("Medicine Saved Successfully: " + medicine);
+    		return new ResponseEntity<Medicine>(addMedicine,HttpStatus.ACCEPTED);
+    	}
+    	else {
+    		LOG.info("Medicine Failed To Add: " + medicine.getId());
+    		throw new FailedToAddMedicineException("The Medicine which you are trying to add that can't be Saved because it already Exist: " + medicine.getId());
+    	}
+    }
+	
+    @GetMapping(value="/getMedicineByName/{medicineName}")
+    public ResponseEntity<List<Medicine>> findByNameContainingIgnoreCase(@PathVariable String medicineName){
+    	List<Medicine> medicinesByName = medicineService.getMedicinesByName(medicineName);
+    	if (medicinesByName != null) {
+    		LOG.info("Medicines Found Successfully " + medicinesByName);
+			return new ResponseEntity<List<Medicine>>(medicinesByName, HttpStatus.ACCEPTED);
+		} else {
+			LOG.info("Medicines Not Found For " + medicineName);
+			throw new MedicineNotFoundException("Medicines Not Found for given " + medicineName);
+		}
+    }
+	
+	
+	
+}
