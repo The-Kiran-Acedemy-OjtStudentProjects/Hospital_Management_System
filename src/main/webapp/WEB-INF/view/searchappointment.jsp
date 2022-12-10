@@ -41,7 +41,7 @@
         <form class="form-inline mt-1" action="searchappointmentbydate"></br>
           <div class="form-group">
             <label for="inputPassword2" class="text-color ml-5"><h4>Search Appointment By Date</h4></label>
-            <input type="date" class="form-control ml-3" id="inputPassword2" name="appointmentdate" placeholder="Enter Date..">
+            <input type="text" class="form-control ml-3" id="inputPassword2" name="appointmentdate" placeholder="Enter Date..">
           </div>
           <button type="submit" class="btn text-color custom-bg ml-4">Search</button>
        </form>
