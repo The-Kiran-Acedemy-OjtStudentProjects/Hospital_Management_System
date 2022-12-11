@@ -98,6 +98,11 @@ public class PatientController {
 		List<Patient> patients = new ArrayList<Patient>();
 		patients.add(patient);
 		ModelAndView mv =new ModelAndView();
+		if (patient != null) {
+			patients.add(patient);
+		} else {
+			mv.addObject("msg", "Patient Id not found for " + patientId);
+		}
 		mv.addObject("view", AdminView.PATIENT.value());
 		mv.setViewName("admindashboard");
 		mv.addObject("patients", patients);
