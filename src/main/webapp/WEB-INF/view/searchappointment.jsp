@@ -27,7 +27,7 @@
        <form class="form-inline ml-5" action="searchappointmentbyid">
           <div class="form-group">
             <label for="inputPassword2" class="text-color"><h4>Search Appointment By Id</h4></label>
-            <input type="number" class="form-control ml-3" id="inputPassword2" name="appointmentid" placeholder="Enter Appointment Id..">
+            <input type="number" min="0" class="form-control ml-3" id="inputPassword2" name="appointmentid" placeholder="Enter Appointment Id..">
           </div>
           <button type="submit" class="btn text-color custom-bg ml-4">Search</button>
        </form>
@@ -124,6 +124,7 @@
       }
     %>
 </table>
+	<h4 style="color: red; text-align: center;"> ${msg} </h4>
    </div>
 </div>
 
