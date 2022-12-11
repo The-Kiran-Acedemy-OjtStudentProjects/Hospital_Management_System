@@ -34,6 +34,12 @@ public class AppointmentResource {
 		return appointmentService.getAppointmentById(appointmentid);
 	}
 	
+	
+	public List<Appointment> searchAppointmentByStatus(String treatmentstatus) {
+		List<Appointment> listAppointment = appointmentService.searchAppointmentByStatus(treatmentstatus);
+		return listAppointment;
+	}
+	
 	public List<Appointment> getAppointmentsByPatientName(String patientName) {
 		List<Patient> patientsId = patientService.getPatientsIdByPatientName(patientName);
 		List<Integer> patientIds = new ArrayList<>();

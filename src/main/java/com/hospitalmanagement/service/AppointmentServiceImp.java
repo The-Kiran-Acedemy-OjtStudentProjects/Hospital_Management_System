@@ -34,6 +34,12 @@ public class AppointmentServiceImp implements AppointmentService {
 	public List<Appointment> getAppointmentsByPatientsId(List<Integer> patientsId) {
 		return appointmentDao.findByPatientsId(patientsId);
 	}
+	
+	
+	@Override
+	public List<Appointment> searchAppointmentByStatus(String treatmentstatus) {					
+		return appointmentDao.findByTreatmentstatus(treatmentstatus);
+	}
 
 	@Override
 	public List<Appointment> getAppointmentsByDoctorIdAndAppointmentDate(int doctorId, String appointmentDate) {
