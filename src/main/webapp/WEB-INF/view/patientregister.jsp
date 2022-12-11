@@ -96,7 +96,7 @@
                  
                  <div class="form-group   ">
                      <label for="email">Pin code</label>
-                     <input type="number" class="form-control" id="pincode" aria-describedby="emailHelp" name="pincode" placeholder="Enter pincode.." required>
+                     <input type="text" class="form-control" id="pincode" aria-describedby="emailHelp" name="pincode" placeholder="Enter pincode.." minLength="6" maxlength="6" required>
                  </div>
               </div>
                 <div class="container text-center">
