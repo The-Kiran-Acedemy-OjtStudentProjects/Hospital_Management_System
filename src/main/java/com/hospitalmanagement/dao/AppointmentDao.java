@@ -2,7 +2,6 @@ package com.hospitalmanagement.dao;
 
 import java.util.List;
 
-import org.springframework.boot.autoconfigure.data.web.SpringDataWebProperties.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
@@ -17,6 +16,10 @@ public interface AppointmentDao extends JpaRepository<Appointment , Integer> {
 	
 	@Query( "select a from Appointment a where a.patientid in :ids" )
 	List<Appointment> findByPatientsId(@Param("ids") List<Integer> patientIds);
+	
+	// this method  for search Appoinment by status
+	List<Appointment> findByTreatmentstatus(String treatmentstatus);
+	
 	List<Appointment> findByDoctoridAndAppointmentdate(int doctorid , String appointmentdate);
 	List<Appointment> findByDoctoridAndAppointmentdateAndAppointmenttime(int doctorid , String appointmentdate, String appointmenttime);
 	List<Appointment> findByAppointmentdate(String apointmentDate);

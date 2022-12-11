@@ -16,6 +16,7 @@
 <meta charset="ISO-8859-1">
 <title>My Patients</title>
 <%@ include file="./components/common_cs_js.jsp"%>
+
 </head>
 <body>
 <%@ include file="./components/navbar.jsp"%>
@@ -24,6 +25,7 @@
     SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");  
     String strDate= formatter.format(date);  
 %>
+<div class="w-100 p-3" >
 <div class="row mt-4">
     <div class="col-md-6">
         <div class="card">
@@ -151,5 +153,6 @@
         </div>
     </div>
 </div>  
+</div>
 </body>
 </html>

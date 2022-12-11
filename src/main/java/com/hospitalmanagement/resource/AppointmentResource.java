@@ -34,6 +34,12 @@ public class AppointmentResource {
 		return appointmentService.getAppointmentById(appointmentid);
 	}
 	
+	 // this method  for search Appoinment by status 
+	public List<Appointment> searchAppointmentByStatus(String treatmentstatus) {
+		return appointmentService.searchAppointmentByStatus(treatmentstatus);
+	}
+	
+	
 	public List<Appointment> getAppointmentsByPatientName(String patientName) {
 		List<Patient> patientsId = patientService.getPatientsIdByPatientName(patientName);
 		List<Integer> patientIds = new ArrayList<>();
@@ -48,7 +54,9 @@ public class AppointmentResource {
 	}
 	
 	public List<Appointment> getAppointmentsByDoctorIdAndAppointmentDateAndTime(int doctorId, String appointmentDate, String appointmentTime) {
-		return appointmentService.getAppointmentsByDoctorIdAndAppointmentDate(doctorId, appointmentDate);
+		 return  appointmentService.getAppointmentsByDoctorIdAndAppointmentDate(doctorId, appointmentDate);
+		
+		
 	}
 	
 	public Appointment updateAppointment(Appointment appointment) {

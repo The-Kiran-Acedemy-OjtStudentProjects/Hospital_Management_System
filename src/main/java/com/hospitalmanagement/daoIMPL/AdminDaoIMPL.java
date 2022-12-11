@@ -30,10 +30,8 @@ public class AdminDaoIMPL implements AdminDao {
 			Criteria criteria = session.createCriteria(Admin.class);
 			SimpleExpression usernameExp = Restrictions.eq("username", username);
 			SimpleExpression passwordExp = Restrictions.eq("password", password);
-
-			criteria.add(Restrictions.and(usernameExp, passwordExp));
+			criteria.add(Restrictions.and(usernameExp, passwordExp));	
 			admin = (Admin) criteria.uniqueResult();
-
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {

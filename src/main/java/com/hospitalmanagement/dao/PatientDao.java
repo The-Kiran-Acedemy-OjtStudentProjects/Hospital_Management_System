@@ -20,4 +20,6 @@ public interface PatientDao extends JpaRepository<Patient, Integer> {
 	public List<Patient> findTop5ByIdDesc(@Param("date") String date);
 	@Query(value= "SELECT * FROM Patient ", nativeQuery=true)
 	List<Patient> getAllPatient();
+	
+//	@Query(value = "select * from Patient where ")
 }

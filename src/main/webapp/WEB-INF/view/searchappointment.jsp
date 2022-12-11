@@ -30,7 +30,22 @@
             <input type="number" class="form-control ml-3" id="inputPassword2" name="appointmentid" placeholder="Enter Appointment Id..">
           </div>
           <button type="submit" class="btn text-color custom-bg ml-4">Search</button>
-       </form>
+       </form> 
+       
+       
+       
+       
+       
+      <div class="ml-5">
+       <label for="inputPassword2" class="text-color"><h4>Search Appointment With Done Status</h4></label>
+        <a href="searchappointmentbystatus?treatmentstatus=<%= TreatmentStatus.DONE.value()%>" class="ml-2"><button class="btn text-color custom-bg ml-2">Search</button></a>
+       </div>
+       
+       
+       
+       
+    
+       
        <form class="form-inline mt-1" action="searchappointmentbypatientname">
           <div class="form-group">
             <label for="inputPassword2" class="text-color ml-5"><h4>Search Appointment By Patient name</h4></label>
@@ -38,6 +53,7 @@
           </div>
           <button type="submit" class="btn text-color custom-bg ml-4">Search</button>
        </form>
+       
         <form class="form-inline mt-1" action="searchappointmentbydate"></br>
           <div class="form-group">
             <label for="inputPassword2" class="text-color ml-5"><h4>Search Appointment By Date</h4></label>
@@ -47,11 +63,14 @@
        </form>
        <%
            Date date = new Date();  
-           SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");  
+           SimpleDateFormat formatter = new SimpleDateFormat("dd-mm-yyyy");  
            String strDate= formatter.format(date);  
        %>
-       <a href="searchappointmentbydate?appointmentdate=<%=strDate%>" class="ml-2"><button class="btn text-color custom-bg ml-2">Get Todays Appointments</button></a>
+      
+      <a href="searchappointmentbydate?appointmentdate=<%=strDate%>" class="ml-2"><button class="btn text-color custom-bg ml-2">Get Todays Appointments</button></a>
   </div>
+  </br>
+  
   <div class="table-responsive">
           <table class="table">
   <thead class="custom-bg text-color">
@@ -125,6 +144,7 @@
     %>
 </table>
    </div>
+  
 </div>
 
 </body>
