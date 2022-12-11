@@ -26,55 +26,54 @@ import com.hospitalmanagement.resource.ReceptionistResource;
 @Controller
 public class PatientController {
 
-
 	private static Logger LOG = LogManager.getLogger(PatientController.class);
 
 	@Autowired
 	private MedicineResource medicineResource;
-	
+
 	@Autowired
 	private MedicineDistributorResource medicineDistributorResource;
-	
+
 	@Autowired
 	private MedicineCompanyResource medicineCompanyResource;
-	
+
 	@Autowired
 	private AppointmentResource appointmentResource;
-	
+
 	@Autowired
 	private DoctorResource doctorResource;
-	
+
 	@Autowired
 	private PatientResource patientResource;
-	
+
 	@Autowired
 	private ReceptionistResource receptionistResource;
-	
+
 	@Autowired
 	private PharmacistResource pharmacistResource;
-	
+
 	@GetMapping("/patientregister")
 	public String goToPatientRegisterPage() {
 		LOG.info("Redirecting to Patient Register Page");
 		return "patientregister";
 	}
-	
+
 	@PostMapping("/patientregister")
 	public ModelAndView registerPatient(@ModelAttribute Patient patient, Model model) {
 		ModelAndView mv = new ModelAndView();
-		if(this.patientResource.addPatient(patient)==true) {
-			mv.addObject("status", patient.getFirstname()+" Successfully Registered as Patient.");
+		if (this.patientResource.addPatient(patient) == true) {
+			mv.addObject("status", patient.getFirstname() + " Successfully Registered as Patient.");
 			mv.setViewName("index");
 		}
-		
+
 		else {
-			mv.addObject("status", patient.getFirstname()+" Failed to Registered as Patient.");
+			mv.addObject("status", patient.getFirstname() + " Failed to Registered as Patient.");
 			mv.setViewName("patientregister");
 		}
-		
+
 		return mv;
 	}
-	
+
 	@GetMapping("/getpatient")
 	public ModelAndView getPatientById(@RequestParam int patientid) {
 		ModelAndView mv = new ModelAndView();
@@ -85,19 +84,24 @@ public class PatientController {
 		mv.addObject("doctorResource", doctorResource);
 		return mv;
 	}
-	
+
 	@GetMapping("/viewmypatient")
 	public String viewMyPatients() {
 		return "viewmypatient";
 	}
-	
+
 	@GetMapping("/searchpatientbyId")
 	public ModelAndView searchPatientByid(@RequestParam int patientId) {
 		LOG.info("Searching medicine by id");
 		Patient patient = patientResource.getPatientById(patientId);
 		List<Patient> patients = new ArrayList<Patient>();
-		patients.add(patient);
-		ModelAndView mv =new ModelAndView();
+		ModelAndView mv = new ModelAndView();
+		if (patient != null) {
+			patients.add(patient);
+		} else {
+			mv.addObject("msg", "Patient Id not found for " + patientId);
+		}
+
 		mv.addObject("view", AdminView.PATIENT.value());
 		mv.setViewName("admindashboard");
 		mv.addObject("patients", patients);
@@ -105,36 +109,41 @@ public class PatientController {
 		mv.addObject("medicineResource", medicineResource);
 		mv.addObject("companyResource", medicineCompanyResource);
 		mv.addObject("distributorResource", medicineDistributorResource);
-        mv.addObject("patientResource",patientResource );
-        mv.addObject("doctorResource", doctorResource);
-        mv.addObject("receptionistResource",receptionistResource);
-        mv.addObject("pharmacistResource",pharmacistResource);
+		mv.addObject("patientResource", patientResource);
+		mv.addObject("doctorResource", doctorResource);
+		mv.addObject("receptionistResource", receptionistResource);
+		mv.addObject("pharmacistResource", pharmacistResource);
 		return mv;
 	}
-	
+
 	@GetMapping("/searchpatientbyName")
 	public ModelAndView searchpharmacistByname(@RequestParam String patientName) {
 		LOG.info("Searching Medicine by medicine name");
+		ModelAndView mv = new ModelAndView();
 		List<Patient> patients = patientResource.getPatientsByName(patientName);
-		ModelAndView mv =new ModelAndView();
-        mv.addObject("view", AdminView.PATIENT.value());
+		if(patients.isEmpty()) {
+			mv.addObject("msg","Patient Not Found for " + patientName);
+		}
+		
+		mv.addObject("view", AdminView.PATIENT.value());
 		mv.setViewName("admindashboard");
 		mv.addObject("patients", patients);
 		mv.addObject("appointmentResource", appointmentResource);
 		mv.addObject("medicineResource", medicineResource);
 		mv.addObject("companyResource", medicineCompanyResource);
 		mv.addObject("distributorResource", medicineDistributorResource);
-        mv.addObject("patientResource",patientResource );
-        mv.addObject("doctorResource", doctorResource);
-        mv.addObject("receptionistResource",receptionistResource);
-        mv.addObject("pharmacistResource",pharmacistResource);
+		mv.addObject("patientResource", patientResource);
+		mv.addObject("doctorResource", doctorResource);
+		mv.addObject("receptionistResource", receptionistResource);
+		mv.addObject("pharmacistResource", pharmacistResource);
 		return mv;
 	}
+
 	@GetMapping("/searchAllpatient")
 	public ModelAndView searchAllpatient() {
 		LOG.info("Searching Medicine by medicine name");
 		List<Patient> patients = patientResource.getAllPatient();
-		ModelAndView mv =new ModelAndView();
+		ModelAndView mv = new ModelAndView();
 		mv.addObject("view", AdminView.PATIENT.value());
 		mv.setViewName("admindashboard");
 		mv.addObject("patients", patients);
@@ -142,10 +151,10 @@ public class PatientController {
 		mv.addObject("medicineResource", medicineResource);
 		mv.addObject("companyResource", medicineCompanyResource);
 		mv.addObject("distributorResource", medicineDistributorResource);
-		mv.addObject("patientResource",patientResource );
+		mv.addObject("patientResource", patientResource);
 		mv.addObject("doctorResource", doctorResource);
-		mv.addObject("receptionistResource",receptionistResource);
-		mv.addObject("pharmacistResource",pharmacistResource);
+		mv.addObject("receptionistResource", receptionistResource);
+		mv.addObject("pharmacistResource", pharmacistResource);
 		return mv;
 	}
 
