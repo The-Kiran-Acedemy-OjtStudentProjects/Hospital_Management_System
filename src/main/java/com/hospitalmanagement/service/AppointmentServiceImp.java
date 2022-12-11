@@ -63,7 +63,13 @@ public class AppointmentServiceImp implements AppointmentService {
 
 	@Override
 	public double getSumOfPriceUsingBillingDate(String billingDate) {
-		return appointmentDao.sumOfPrice(billingDate);
+		
+		Double sumOfPrice=  appointmentDao.sumOfPrice(billingDate);
+		if(sumOfPrice != null) {
+			return sumOfPrice;
+		}else {
+			return 0;
+		}
 	}
 
 	@Override
