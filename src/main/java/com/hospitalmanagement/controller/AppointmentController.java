@@ -116,6 +116,23 @@ public class AppointmentController {
 		return mv;
 	}
 	
+	
+	
+	@GetMapping("/searchappointmentbystatus")
+	public ModelAndView searchAppointmentByStatus(@RequestParam String treatmentstatus) {
+		System.out.println(treatmentstatus);
+	LOG.info("Searching appointment by status");
+	List<Appointment> appointments = appointmentResource.searchAppointmentByStatus(treatmentstatus);
+	ModelAndView mv =new ModelAndView();
+	mv.setViewName("searchappointment");
+	mv.addObject("patientResource", patientResource);
+	mv.addObject("doctorResource", doctorResource);
+	mv.addObject("appointments", appointments);
+	return mv;
+	}
+	
+	
+	
 	@GetMapping("/searchappointmentbypatientname")
 	public ModelAndView searchAppointmentByPatientName(@RequestParam String patientname) {
 		LOG.info("Searching appointment by patient name");

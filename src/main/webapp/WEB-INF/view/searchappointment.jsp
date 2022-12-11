@@ -31,6 +31,18 @@
           </div>
           <button type="submit" class="btn text-color custom-bg ml-4">Search</button>
        </form>
+       
+       
+       
+       <div class="form-inline ml-5">
+       
+      <label for="inputPassword2" class="text-color"><h4>Search Appointment With Done Status</h4></label>
+        <a href="searchappointmentbystatus?treatmentstatus=<%=TreatmentStatus.DONE.value()%>" class="ml-2"><button class="btn text-color custom-bg ml-2">Search</button></a>
+       
+       </div>
+       
+       
+       
        <form class="form-inline mt-1" action="searchappointmentbypatientname">
           <div class="form-group">
             <label for="inputPassword2" class="text-color ml-5"><h4>Search Appointment By Patient name</h4></label>

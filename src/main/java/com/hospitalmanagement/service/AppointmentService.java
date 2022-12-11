@@ -9,6 +9,9 @@ public interface AppointmentService {
 	Appointment updateAppointment(Appointment appointment);
 	Appointment getAppointmentById(int appointmentId);
 	List<Appointment> getAppointmentsByPatientsId(List<Integer> patientsId);
+	
+	public  List<Appointment> searchAppointmentByStatus(String treatmentstatus);
+	
 	List<Appointment> getAppointmentsByDoctorIdAndAppointmentDate(int doctorId, String appointmentDate);
 	List<Appointment> getAppointmentsByDoctorIdAndAppointmentDate(int doctorId, String appointmentDate, String appointmentTime);
 	List<Appointment> getAppointmentsByDate(String date);
