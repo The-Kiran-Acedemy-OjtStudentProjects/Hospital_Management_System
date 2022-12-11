@@ -87,7 +87,10 @@ public class MedicineController {
 		LOG.info("Searching medicine by id");
 		Medicine medicine = medicineResource.getMedicineById(medicineId);
 		List<Medicine> medicines = new ArrayList<Medicine>();
-		medicines.add(medicine);
+		if(medicine!=null) {
+			medicines.add(medicine);
+		
+		}
 		ModelAndView mv =new ModelAndView();
 		mv.setViewName("searchmedicine");
 		mv.addObject("medicines", medicines);
