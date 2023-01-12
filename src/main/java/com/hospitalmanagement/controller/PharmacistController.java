@@ -115,8 +115,13 @@ public class PharmacistController {
 		LOG.info("Searching medicine by id");
 		Pharmacist pharmacist = pharmacistService.getPharmacistById(pharmacistId);
 		List<Pharmacist> pharmacists = new ArrayList<Pharmacist>();
-		pharmacists.add(pharmacist);
+		//pharmacists.add(pharmacist);
 		ModelAndView mv = new ModelAndView();
+		if(pharmacist!=null){
+			pharmacists.add(pharmacist);
+			}
+			else{
+				mv.addObject("msg", "pharmacist id not Found:-"+pharmacistId);
 		mv.addObject("view", AdminView.PHARMACIST.value());
 		mv.setViewName("admindashboard");
 		mv.addObject("pharmacists", pharmacists);
