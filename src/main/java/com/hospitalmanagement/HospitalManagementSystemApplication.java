@@ -16,4 +16,4 @@ public class HospitalManagementSystemApplication {
 // You have to take the Backup of this project.
 // This backup should be in running mode in another workspace.
 // make clone to it--> and perform your task here in another workspace.
-//(As all you wish you can do the chnages here)
+//(As all you wish you can do the changes here)

@@ -85,7 +85,7 @@
                  
                   <div class="form-group ">
                      <label for="name">Street</label>
-                     <input type="text" class="form-control" id="street" aria-describedby="emailHelp" name="street" placeholder="Enter email id.." required>
+                     <input type="text" class="form-control" id="street" aria-describedby="emailHelp" name="street" placeholder="Enter street.." required>
                  </div>
              </div>    
              <div class="row">

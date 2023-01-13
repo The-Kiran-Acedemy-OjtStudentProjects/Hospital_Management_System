@@ -98,7 +98,7 @@ public class ReceptionistController {
 		}
 		
 		else {
-			mv.addObject("status"," Failed to Login as RECEPTIONIST");
+			mv.addObject("status",username+" Failed to Login as RECEPTIONIST");//
 			mv.setViewName("receptionistregister");
 		}
 		

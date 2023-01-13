@@ -13,6 +13,7 @@ import javax.servlet.http.HttpSession;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -74,6 +75,8 @@ public class AppointmentController {
 	private PharmacistResource pharmacistResource;
 	
 	public static List<Medicine> medicines = new ArrayList<>();
+
+  
 
 	@GetMapping("/appointment")
 	public ModelAndView goToAppointmentPage() {
@@ -205,8 +208,8 @@ public class AppointmentController {
 		mv.addObject("appointments", appointments);
 		return mv;
 	}
-	
-	@GetMapping("/searchappointmentbydateandtime")
+	                                          
+	@GetMapping("/searchappointmentbydateandtime")//*
 	public ModelAndView getAppointmentsByDateAndTime(HttpServletRequest request,@RequestParam String date, @RequestParam String time) {
 		ModelAndView mv=new ModelAndView();
 		HttpSession session = request.getSession();

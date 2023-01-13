@@ -46,11 +46,13 @@ public class AppointmentResource {
 	public List<Appointment> getAppointmentsByDoctorIdAndAppointmentDate(int doctorId, String appointmentDate) {
 		return appointmentService.getAppointmentsByDoctorIdAndAppointmentDate(doctorId, appointmentDate);
 	}
-	
+//	  Date date = new Date();  
+//	    SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");  
+//	    String appointmentDate= formatter.format(date); 
+//	
 	public List<Appointment> getAppointmentsByDoctorIdAndAppointmentDateAndTime(int doctorId, String appointmentDate, String appointmentTime) {
 		return appointmentService.getAppointmentsByDoctorIdAndAppointmentDate(doctorId, appointmentDate);
 	}
-	
 	public Appointment updateAppointment(Appointment appointment) {
 		return appointmentService.updateAppointment(appointment);
 	}
