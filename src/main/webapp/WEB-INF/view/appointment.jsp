@@ -101,7 +101,7 @@
               <div class="row">     
                   <div class="form-group">
                      <label for="email">Appointment Date</label>
-                     <input type="text" class="form-control" aria-describedby="emailHelp" name="appointmentdate" required>
+                     <input type="Date" class="form-control" aria-describedby="emailHelp" name="appointmentdate" required>
                  </div>
                   <div class="form-group ml-4">
                   <label for="email">Appointment Time</label>
