@@ -1061,6 +1061,7 @@
 	      }
 	    %>
 						</table>
+						<h4 style="color:green; text-align: center; ">${msg}</h4>
 					</div>
 
 				</div>
