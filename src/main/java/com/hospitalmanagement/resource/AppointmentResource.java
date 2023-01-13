@@ -48,7 +48,7 @@ public class AppointmentResource {
 	}
 	
 	public List<Appointment> getAppointmentsByDoctorIdAndAppointmentDateAndTime(int doctorId, String appointmentDate, String appointmentTime) {
-		return appointmentService.getAppointmentsByDoctorIdAndAppointmentDate(doctorId, appointmentDate);
+		return appointmentService.getAppointmentsByDoctorIdAndAppointmentDate(doctorId, appointmentDate, appointmentTime);
 	}
 	
 	public Appointment updateAppointment(Appointment appointment) {

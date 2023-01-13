@@ -21,7 +21,7 @@
 <%@ include file="./components/navbar.jsp"%>
 <%
     Date date = new Date();  
-    SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");  
+    SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");  
     String strDate= formatter.format(date);  
 %>
 <div class="W-100 p-3">
