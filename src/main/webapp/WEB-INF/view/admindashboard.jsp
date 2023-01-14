@@ -1229,6 +1229,7 @@
 				<%
 				         	}    
 						%>
+						<h4 style ="color: blue; text-align: center;" > ${msg}</h4>
 
 
 			</div>
