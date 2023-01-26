@@ -154,8 +154,7 @@
 									height="40px" width="40px"> <b>Total Earnings Today</b>
 							</div>
 							<div class="card-body text-color text-center">
-								<h3>
-									&#8377;<%=appointmentResource.getTotalEarningToday()%></h3>
+								<h3><%=appointmentResource.getTotalEarningToday()%></h3>
 							</div>
 						</div>
 					</div>
@@ -254,7 +253,7 @@
 							</div>
 							<div class="card-body text-color text-center">
 								<h3>
-									&#8377;<%=appointmentResource.getSumOfPriceFromAppointmentByBillingDate(todayDate)%></h3>
+									<%=appointmentResource.getSumOfPriceFromAppointmentByBillingDate(todayDate)%></h3>
 							</div>
 						</div>
 					</div>
@@ -548,7 +547,7 @@
 								<div class="form-group">
 									<input type="number" class="form-control ml-3"
 										id="inputPassword2" name="appointmentid"
-										placeholder="Enter Appointment Id..">
+										placeholder="Enter Appointment Id.."required>
 								</div>
 								<button type="submit" class="btn text-color custom-bg ml-2">Search</button>
 							</form>
@@ -563,7 +562,7 @@
 							</form>
 							<form class="form-inline mt-1" action="searchappointmentbyDate">
 								<div class="form-group">
-									<input type="text" class="form-control ml-3"
+									<input type="date" class="form-control ml-3" 
 										id="inputPassword2" name="appointmentdate"
 										placeholder="Enter Date..">
 								</div>
@@ -630,7 +629,7 @@
 							%>
 						</table>
 					</div>
-
+					<%@ include file="./components/message.jsp"%>
 				</div>
 				<%
 				}
@@ -869,6 +868,7 @@
 						</table>
 					</div>
 
+					
 				</div>
 				<%
 					}
