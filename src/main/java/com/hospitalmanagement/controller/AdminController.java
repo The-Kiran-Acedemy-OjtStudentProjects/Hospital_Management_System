@@ -91,7 +91,7 @@ public class AdminController {
 			mv.setViewName("adminregister");
 		}
 		
-		System.out.println("P town baby");
+		System.out.println("p");
 		return mv;
 	}
 	//completed
