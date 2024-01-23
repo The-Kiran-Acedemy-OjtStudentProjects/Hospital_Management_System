@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import com.hospitalmanagement.constants.DatabaseConstants.AdminView;
+import com.hospitalmanagement.model.Appointment;
 import com.hospitalmanagement.model.Patient;
 import com.hospitalmanagement.resource.AppointmentResource;
 import com.hospitalmanagement.resource.DoctorResource;
@@ -93,11 +94,15 @@ public class PatientController {
 	
 	@GetMapping("/searchpatientbyId")
 	public ModelAndView searchPatientByid(@RequestParam int patientId) {
+		ModelAndView mv = new ModelAndView();
 		LOG.info("Searching medicine by id");
 		Patient patient = patientResource.getPatientById(patientId);
 		List<Patient> patients = new ArrayList<Patient>();
-		patients.add(patient);
-		ModelAndView mv =new ModelAndView();
+		if( patient!= null) {
+			patients.add(patient);
+		}else {
+			mv.addObject("msg", "Patient not found for "+patientId);
+		}
 		mv.addObject("view", AdminView.PATIENT.value());
 		mv.setViewName("admindashboard");
 		mv.addObject("patients", patients);
@@ -117,6 +122,10 @@ public class PatientController {
 		LOG.info("Searching Medicine by medicine name");
 		List<Patient> patients = patientResource.getPatientsByName(patientName);
 		ModelAndView mv =new ModelAndView();
+		List<Patient> patients1 = new ArrayList<Patient>();
+		if(patients1.isEmpty() ) {
+			mv.addObject("msg", "Patient not found for "+patientName);
+		}
         mv.addObject("view", AdminView.PATIENT.value());
 		mv.setViewName("admindashboard");
 		mv.addObject("patients", patients);
